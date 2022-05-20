@@ -1,998 +1,1063 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
-        * {
-  box-sizing: border-box;
-}
-#menu
-{
-  background-color: #ffffff79;
-}
-
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-ul.navbar-nav { 
-  float:right;
-  text-align:center;
-}
-ul.navbar-nav li 
-{
-  padding: 0 10px;
-}
-@media only screen and (max-width:767px)
-{ ul.navbar-nav { float:none; } }
-.container-fluid {
-  padding: 0 1em;
-}
-.navbar-nav li a
-{
-  color:black!important;
-  font-size:1.2em;
-  font-family: Century gothic,sans-serif;
-  font-weight:600;
-  transition: 0.4s ease;
-}
-.navbar-nav li a:hover
-{
-  color:#fff!important;
-  background-color:black!important;
-}
-.navbar-brand {
-  padding:10px 15px!important;
-}
-a.navbar-brand .fa-globe
-{
-  font-size: 30px;
-  color: black;
-  transition:0.5s ease;
-}
-a.navbar-brand .fa-globe:hover
-{
-  color: #3935e6;
-}
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: black!important;
-}
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: #fff!important;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 996px;
-}
-.splash {
-  background:url("https://unsplash.com/photos/nd_6z4JFK4g/download?force=true") no-repeat fixed center bottom;
-	background-size: cover;
-	color: #fff;
-}
-
-.splash .container {
-  padding-top: 15vh; /* No JS fallback*/
-  padding-bottom: 10vh; /* No JS fallback*/
-}
-
-.profile-image {
-  border-radius: 50%;
-  display: block;
-  max-height:250px;
-  max-width: 250px;
-  margin: 0 auto 1em;
-  width: 100%;
-  opacity: 0.85;
-}
-
-.splash h1 {
-  font-size: 40px;
-  margin-bottom: .15em;
-  text-align: center;
-}
-
-.splash .lead, .splash .continue {
-  display: inline-block;
-  text-align: center;
-}
-h1.intro-text
-{
-  margin:0;
-  color:#fff;
-}
-.splash .lead {
-  font-size: 30px;
-  margin-bottom: 1em;
-  font-family: Rockwell;
-}
-.navbar-inverse
-{
-  border:none!important;
-}
-@keyframes blink
-  {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-  }
-        @-webkit-keyframes blink
-        {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-moz-keyframes blink
-        {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-ms-keyframes blink
-        {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-        @-o-keyframes blink
-        {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-        }
-/* code for animated blinking cursor */
-#typed-cursor
-{
-      opacity: 1;
-      font-size: 40px;
-      color: #fff;
-      font-weight: 50;
-      -webkit-animation: blink 1s infinite;
-      -moz-animation: blink 1s infinite;
-      -ms-animation: blink 1s infinite;
-      -o-animation: blink 1s infinite;
-      animation: blink 1s infinite;
-}
-
-.splash .continue {
-  font-size: 3em;
-  display:block;
-}
-
-.splash .continue a {
-  border: 2px solid #fff;
-  border-radius: 100%;
-  color: #fff;
-  display: inline-block;
-  text-decoration: none;
-  width: 40px;
-  height:40px;
-  font-size:30px;
-}
-.splash .continue a:hover {
-  background-color: rgba(255, 255, 255, .25);
-}
-#about,#portfolio,#contact
-{
-  padding-top:4em!important;
-}
-section h2 {
-    margin: 0;
-    font-size: 3em;
-}
-section.success {
-    color: #fff;
-    background: rgb(13, 79, 136);
-  padding: 2%;
-}
-
-section.success a
-{
-  color:black;
-  transition: 0.4s ease;
-}
-section.success a:hover {
-    outline: 0;
-    color: #fff;
-  border: 2px solid #fff;
-}
-.contact-button
-{
-  padding-bottom:2%;
-}
-hr.star-light,hr.star-portfolio {
-    margin: 25px auto 30px;
-    padding: 0;
-    max-width: 250px;
-    border: 0;
-    border-top: solid 3px;
-    text-align: center;
-}
-
-hr.star-light:after,hr.star-portfolio:after {
-    content: "\f005";
-    display: inline-block;
-    position: relative;
-    top: -.8em;
-    padding: 0 .25em;
-    font-family: FontAwesome;
-    font-size: 2em;
-}
-
-hr.star-light {
-    border-color: #fff;
-}
-hr.star-portfolio {
-    border-color: black;
-}
-hr.star-portfolio:after {
-    color: black;
-    background-color: #eee;
-}
-hr.star-light:after {
-    color: #fff;
-    background-color: rgb(13, 79, 136);
-}
-p.content-text { font-size: 25px; }
-
-/* PORTFOLIO */
-.portfolio-card{
-    box-shadow: 0px 2px 5px #888888;
-    background: #eee;
-    border-radius: 4px;
-
-}
-
-.portfolio-card:hover{
-	box-shadow: 0px 10px 10px #888888;
-  cursor: pointer
-}
-
-.portfolio-container-holder{
-	background: #eee;
-	padding-bottom: 20px;
-}
-
-
-.portfolio-card-holder{
-	padding: 5px;
-	margin-bottom: 5px;
-}
-
-.portfolio-img{
-	width: 100%;
-	border-radius: 4px 4px 0 0;
-}
-
-.portfolio-img-desc{
-	position: relative;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	background: #fff;
-	color: #000;
-	text-align: center;
-	padding: 5px;
-}
-
-/* Contact */
-.contact-me-container{
-	padding:3%;
-background: rgb(13, 79, 136);
-}
-.fa-user,.fa-at,.fa-phone
-{
-  color:black;
-}
-.submit-button{
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-/* ========================
-Footer
-======================== */
-
-footer {
-  background-color: #2C3E50;
-  color:  #fff;
-  font-size: 1.5em;
-  text-align: center;
-  padding:3%;
-}
-a.tel,a.tel:hover
-{
-  text-decoration:none;
-  color:#fff;
-}
-a.social-button {
-	background: #fff;
-	font-size: 20px;
-	border-radius: 50%;
-	margin: 5px;
-}
-.address-container{
-	display: inline-block;
-	margin: 0 auto;
-}
-a.link-facebook,a.link-twitter,a.link-codepen,a.link-linkedin,a.link-instagram
-{
-  transition:0.4s ease;
-}
-a.link-twitter
-{
-  color:#1DA1F2;
-}
-a.link-facebook
-{
- color: #3b5998;
-}
-a.link-linkedin
-{
-  color:#007bb6;
-}
-a.link-instagram
-{
-  color:#e95950;
-}
-a.link-facebook:hover{
-	background-color: #3b5998;
-	color: #fff;
-}
-
-a.link-twitter:hover{
-	background-color: #1DA1F2;
-	color: #fff;
-}
-
-a.link-codepen:hover{
-	background-color: black;
-	color: #fff;
-}
-
-a.link-linkedin:hover{
-	background-color: #007bb6;
-	color: #fff;
-}
-a.link-instagram:hover{
-	background-color: #e95950;
-	color: #fff;
-}
-.btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: transparent!important;
-}
-.fa-heart {
-  color:#f32323;
-}
-h4.author
-{
-  letter-spacing:4px;
-}
-hr.footer-hr
-{
-  width:150px;
-}
-hr.copyright
-{
-  opacity:0.4;
-}
-    </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <style>
-      @media only screen and (min-width: 1920px) {
-  #main {
-    background: url("https://res.cloudinary.com/dcl67luxn/image/upload/v1543874348/Web_1920_1.svg")
-      no-repeat;
-    height: 1080px;
-  }
-  .nav-item,
-  .navbar-nav {
-    margin: 20px;
-  }
-  #name {
-    font-size: 6.5rem;
-  }
-}
-
-@media screen and (min-width: 1366px) and (max-width: 1919px) {
-  #main {
-    background: url("https://res.cloudinary.com/dcl67luxn/image/upload/v1543874529/Web_1366_2.svg")
-      no-repeat;
-    height: 768px;
-  }
-  .nav-item,
-  .navbar-nav {
-    margin: 20px;
-  }
-  #name {
-    font-size: 6.5rem;
-  }
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1365px) {
-  #main {
-    background: url("https://res.cloudinary.com/dcl67luxn/image/upload/v1543874535/Web_1280_1.svg")
-      no-repeat;
-    height: 800px;
-  }
-  .nav-item,
-  .navbar-nav {
-    margin: 20px;
-  }
-  #name {
-    font-size: 6.5rem;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  #main {
-    background: url("https://res.cloudinary.com/dcl67luxn/image/upload/v1543874570/iPad_1.svg")
-      no-repeat;
-    height: 1024px;
-  }
-  #name {
-    font-size: 3.5rem;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  #main {
-    background: url("https://res.cloudinary.com/dcl67luxn/image/upload/v1543874575/iPhone_6-7-8_1.svg")
-      no-repeat;
-    height: 736px;
-  }
-  #name {
-    font-size: 3.5rem;
-    margin-left: 20px !important;
-  }
-  .line-1 {
-    margin-left: 20px !important;
-  }
-}
-
-#main {
-  background-size: cover;
-}
-
-.navbar-nav {
-  font-size: 2rem;
-}
-
-#about,
-#contact {
-  background-color: #e9ecefb3;
-}
-
-.aboutHeading {
-  font-size: 4rem;
-  padding-top: 100px;
-  padding-bottom: 20px;
-}
-
-.aboutPG {
-  font-size: 2rem;
-  padding-bottom: 100px;
-  padding-top: 48px;
-}
-
-/*Text Font */
-
-#name {
-  margin-left: 65px;
-}
-
-/* Global */
-.line-1 {
-  position: relative;
-  border-right: 2px solid rgba(0, 0, 0, 0.75);
-  font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-  margin-left: 65px;
-  margin-top: 20px;
-}
-
-/* Animation */
-.anim-typewriter {
-  animation: typewriter 4s steps(48) 1s 1 normal both,
-    blinkTextCursor 500ms steps(48) infinite normal;
-}
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 25.2em;
-  }
-}
-@keyframes blinkTextCursor {
-  from {
-    border-right-color: rgba(0, 0, 0, 0.75);
-  }
-  to {
-    border-right-color: transparent;
-  }
-}
-
-form {
-  padding-bottom: 100px;
-  padding-top: 48px;
-}
-
-/*Footer*/
-
-html {
-  position: relative;
-  min-height: 100%;
-  scroll-behavior: smooth;
-}
-body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #484848;
-}
-
-.footer-text {
-  color: white;
-}
-
-/*Submit Button*/
-.btn {
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-bottom: 15px;
-  position: relative;
-  transition: all 0.15s ease-in-out;
-}
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn:active:focus {
-  outline: none;
-  transition: all 0.15s ease-in-out;
-}
-.btn:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.15s ease-in-out;
-  transform: translateY(-1px);
-}
-.btn:active {
-  box-shadow: none;
-  transition-duration: 0.05s;
-  transform: translateY(1px);
-}
-.btn.btn-default:hover,
-.btn.btn-default:focus,
-.btn.btn-default:active {
-  background-color: #f8f8f8;
-}
-.btn.btn-default:active {
-  background-color: #eeeeee;
-}
-.btn.btn-info {
-  background-color: #3498db;
-}
-.btn.btn-info:hover,
-.btn.btn-info:focus,
-.btn.btn-info:active {
-  background-color: #2383c4;
-}
-.btn.btn-info:active {
-  background-color: #2077b2;
-}
-.btn.btn-primary {
-  background-color: #7caae7;
-}
-.btn.btn-primary:hover,
-.btn.btn-primary:focus,
-.btn.btn-primary:active {
-  background-color: #253544;
-}
-.btn.btn-primary:active {
-  background-color: #1e2a37;
-}
-.btn.btn-success {
-  background-color: #2ecc71;
-}
-.btn.btn-success:hover,
-.btn.btn-success:focus,
-.btn.btn-success:active {
-  background-color: #26ab5f;
-}
-.btn.btn-success:active {
-  background-color: #239a55;
-}
-.btn.btn-warning {
-  background-color: #f39c12;
-}
-.btn.btn-warning:hover,
-.btn.btn-warning:focus,
-.btn.btn-warning:active {
-  background-color: #d2850b;
-}
-.btn.btn-warning:active {
-  background-color: #be780a;
-}
-.btn.btn-danger {
-  background-color: #e74c3c;
-}
-.btn.btn-danger:hover,
-.btn.btn-danger:focus,
-.btn.btn-danger:active {
-  background-color: #df2e1b;
-}
-.btn.btn-danger:active {
-  background-color: #cd2a19;
-}
-
-/*Project Cards*/
-.card-custom {
-  overflow: hidden;
-  min-height: 450px;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
-}
-
-.card-custom-img {
-  height: 200px;
-  min-height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-color: inherit;
-}
-
-/* First border-left-width setting is a fallback */
-.card-custom-img::after {
-  position: absolute;
-  content: "";
-  top: 161px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-top-width: 40px;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 545px;
-  border-left-width: calc(575px - 5vw);
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: inherit;
-}
-
-.card-custom-avatar img {
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
-  position: absolute;
-  top: 100px;
-  left: 1.25rem;
-  width: 100px;
-  height: 100px;
-}
-
-.card-custom-avatar img:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.img-fluid {
-  background-color: #7ed956;
-}
-
-#project1 {
-  background: #21d4fd linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
-}
-
-#project2 {
-  background: #fad961 linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
-}
-
-#portfolio {
-  background-image: radial-gradient(
-    circle farthest-corner at 8.6% 21.8%,
-    rgba(231, 0, 0, 1) 0%,
-    rgba(122, 0, 0, 1) 90.1%
-  );
-}
-
-#projectCards {
-  margin-bottom: 100px !important;
-}
-
-  </style>
-  <title>My Portfolio</title>
-  <!--Bootstrap CSS-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <!--Main/First Section-->
-  <div id="main">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skillCanvasContainer">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-		   <li class="nav-item">
-              <a class="nav-link" href="Shaxzod(resume).doc" download>Resume download</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <h1 id="name">Shaxzod To'lisov</h1>
-    <h2 class="line-1 anim-typewriter">i am 22 years old pentester and backend developer</h2>
-  </div>
-  <div id="about">
-    <div class="container">
-      <h1 class="text-center aboutHeading">About Me</h1>
-      <p class="aboutPG text-center">Hi! there i am shaxzad, a cyber security  student in TUIT. Currently i am  Bachelor of Cyber security and backend developer </p>
-    </div>
-  </div>
-  <!-- skills -->
-<style>
-  @import url("https://fonts.googleapis.com/css?family=Merienda");
-  #skillCanvasContainer {
-  display: flex;
-}
-#skillCanvasContainer #skillCanvas {
-  margin: auto;
-}
-</style>
- 
-  <hr>
-<h1 align='center' style="margin-top:10px">My developer skills</h1>
-<div id="skillCanvasContainer">
-  
-  
- <canvas width="500" height="500" id="skillCanvas">
-  <ul>
-    <li><a href="">HTML5</a></li>
-    <li><a href="">CSS </a></li>
-    <li><a href="">JavaScript</a></li>
-    <li><a href="">Bootstrap5</a></li>
-    <li><a href="">Python</a></li>
-    <li><a href="">Sqlite3</a></li>
-    <li><a href="">Postgresql</a></li>
-    <li><a href="">PyTelegramBotapi</a></li>
-    <li><a href="">Aiogram</a></li>
-    <li><a href="">Django</a></li>
-    <li><a href="">Drf</a></li>
-    <li><a href="">FastAPi</a></li>
-    <li><a href="">Golang(basic)</a></li>
-    <li><a href="">Bash</a></li>
-    <li><a href="">Raspberry Pi</a></li>
-    <li><a href="">XSLT</a></li
-    <li><a href="">XQuery</a></li>
-    <li><a href="">Xml</a></li>
-    <li><a href="">HTTP</a></li>
-  </ul>
- </canvas>
-</div>
-  <!-- end skills -->
-<hr>
-  <!--Projects Section - Add your websites to the cards - You can add more as a Bootstrap Deck-->
-  <div id="projects">
-    <div class="container">
-      <h1 class="text-center aboutHeading">Projects</h1>
-      <div class="row pt-5 m-auto" id="projectCards">
-        <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
-            <!--Enter Project Logo/Favicon here-->
-            <div class="card-custom-img" id="project1"></div>
-            <a href="#" target="_blank" class="grow">
-              <div class="card-custom-avatar">
-                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNFiqIrDyEUnupbzmbKNPT-0AJXTW9hBn6Ng&usqp=CAU" alt="Avatar" />
-              </div>
-            </a>
-            <div class="card-body" style="overflow-y: auto">
-              <h1 class="card-title">Medical Project</h1>
-              <h3 class="card-text">A healthcare database serves to replace the</h3>
-            </div>
-            <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="https://trauma.uz" class="btn btn-info btn-lg" target="_blank">View Live</a>
-              <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg">Source code</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
-            <!--Enter Project Logo/Favicon here-->
-            <div class="card-custom-img" id="project2"></div>
-            <a href="#" target="_blank" class="grow">
-              <div class="card-custom-avatar">
-                <img class="img-fluid" src="data:image/jpeg;base64,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" alt="Avatar" />
-              </div>
-            </a>
-            <div class="card-body" style="overflow-y: auto">
-              <h1 class="card-title">Travel project</h1>
-              <h3 class="card-text">Travel project for people </h3>
-            </div>
-            <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="tolisov.pythonanywhere.com" target="blank" class="btn btn-info btn-lg">View Live</a>
-              <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg">Source code</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
-            <!--Enter Project Logo/Favicon here-->
-            <div class="card-custom-img" id="portfolio"></div>
-            <a href="#">
-              <div class="card-custom-avatar">
-                <img class="img-fluid" src="data:image/jpeg;base64,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" alt="Avatar" />
-              </div>
-            </a>
-            <div class="card-body" style="overflow-y: auto">
-              <h1 class="card-title">My blog site</h1>
-              <h3 class="card-text">My blog site write in Rest Api and Django MVT</h3>
-            </div>
-            <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="https://github.com/ShaxaDev" class="btn btn-info btn-lg">View Live</a>
-              <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg" >Source code</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
-            <!--Enter Project Logo/Favicon here-->
-            <div class="card-custom-img" id="portfolio"></div>
-            <a href="#">
-              <div class="card-custom-avatar">
-                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZZHABYFWz80AgQC6i12XE7gceLvE8LGklQ&usqp=CAU" alt="Avatar" />
-              </div>
-            </a>
-            <div class="card-body" style="overflow-y: auto">
-              <h1 class="card-title">Ramazan taqvim bot</h1>
-              <h3 class="card-text">warns you during opening and closing of the mouth and you can find out the times of Ramadan in other regions</h3>
-            </div>
-            <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="https://t.me/ramazon2021_Robot" class="btn btn-info btn-lg">View Live</a>
-              <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg" >Source code</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 pb-3">
-            <div class="card card-custom bg-white border-white border-0">
-              <!--Enter Project Logo/Favicon here-->
-              <div class="card-custom-img" id="portfolio"></div>
-              <a href="#">
-                <div class="card-custom-avatar">
-                  <img class="img-fluid" src="data:image/jpeg;base64,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" alt="Avatar" />
-                </div>
-              </a>
-              <div class="card-body" style="overflow-y: auto">
-                <h1 class="card-title">Education project</h1>
-                <h3 class="card-text">Python Academy learning python system full,quiz,notes,problems,jobs,QA and other</h3>
-              </div>
-              <div class="card-footer" style="background: inherit; border-color: inherit;">
-                <a href="https://github.com/ShaxaDev" class="btn btn-info btn-lg">View Live</a>
-                <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg">Source code</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 pb-3">
-            <div class="card card-custom bg-white border-white border-0">
-              <!--Enter Project Logo/Favicon here-->
-              <div class="card-custom-img" id="portfolio"></div>
-              <a href="#">
-                <div class="card-custom-avatar">
-                  <img class="img-fluid" src="data:image/jpeg;base64,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" alt="Avatar" />
-                </div>
-              </a>
-              <div class="card-body" style="overflow-y: auto">
-                <h1 class="card-title">Quiz bot for TATU studens</h1>
-                <h3 class="card-text">Cyber secrity and other a bot that analyzes the results of test development in science</h3>
-              </div>
-              <div class="card-footer" style="background: inherit; border-color: inherit;">
-                <a href="https://github.com/ShaxaDev" class="btn btn-info btn-lg">View Live</a>
-                <a href="https://github.com/ShaxaDev" class="btn btn-outline-primary btn-lg">Source code</a>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Contact Section - I used php to get this working with my server-->
-  
-    
-
-
-  <footer>
-    <div class="container footer-container">
-        <div class="row footer-row">
-            <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-        <h4 class="text-center">Find me here</h4>
-                 <address>
-                     <strong><i class="fa fa-location-arrow"></i> Uzbekistan.</strong><br>Tashkent city<br>Yunusobod, 2-kvartal 252<br><br>
-                     <a  class="tel" href="tel:998993328405" type="tel"><i class="fa fa-mobile"></i><span> +998 99 332 84 05</span></a>
-                </address>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-sm-6 social-section">
-                <div class="text-center">
-                    <h4 class="text-center">Also, I can be found here</h4>
-            <div class="text-center social-buttons">
-                    
-
-                    <a href="https://github.com/ShaxaDev" class="btn btn-default btn-lg social-button link-github"><i class="fa fa-github"></i>
-                    </a>
-
-                    <a href="https://twitter.com/shaxzad99" class="btn btn-default btn-lg social-button link-twitter"><i class="fa fa-twitter"></i>
-                    </a>
-
-                    <a href="" class="btn btn-default btn-lg social-button link-linkedin"><i class="fa fa-linkedin"></i>
-                    </a>
-      <a href="https://instagram.com/shaxzodtolisov" class="btn btn-default btn-lg social-button link-instagram"><i class="fa fa-instagram"></i>
-                    </a>
-                </div><hr class="footer-hr">
-        <h4 class="author">Made with <i class="fa fa-heart"></i> by <strong>Shaxzad To'lisov</strong></h4>
-                </div>
-            </div>
-        </div><hr class="copyright">
-  <h4><i class="fa fa-copyright"></i> COPYRIGHTS 2022 ALL RIGHTS RESERVED</h4>
-    </div>
-</footer>
-
-  <!--Bootstrap JS-->
-  <script>
-    (function(){var M,K,L=Math.abs,ah=Math.sin,w=Math.cos,s=Math.max,aD=Math.min,ap=Math.ceil,F=Math.sqrt,at=Math.pow,h={},l={},m={0:"0,",1:"17,",2:"34,",3:"51,",4:"68,",5:"85,",6:"102,",7:"119,",8:"136,",9:"153,",a:"170,",A:"170,",b:"187,",B:"187,",c:"204,",C:"204,",d:"221,",D:"221,",e:"238,",E:"238,",f:"255,",F:"255,"},x,c,Q,aF,H,aG,aa,C=document,p,b={};for(M=0;M<256;++M){K=M.toString(16);if(M<16){K="0"+K}l[K]=l[K.toUpperCase()]=M.toString()+","}function ai(i){return typeof i!="undefined"}function I(i){return typeof i=="object"&&i!=null}function av(i,j,aH){return isNaN(i)?aH:aD(aH,s(j,i))}function aA(){return false}function G(){return new Date().valueOf()}function A(aH,aK){var j=[],aI=aH.length,aJ;for(aJ=0;aJ<aI;++aJ){j.push(aH[aJ])}j.sort(aK);return j}function an(j){var aI=j.length-1,aH,aJ;while(aI){aJ=~~(Math.random()*aI);aH=j[aI];j[aI]=j[aJ];j[aJ]=aH;--aI}}function ae(i,aH,j){this.x=i;this.y=aH;this.z=j}H=ae.prototype;H.length=function(){return F(this.x*this.x+this.y*this.y+this.z*this.z)};H.dot=function(i){return this.x*i.x+this.y*i.y+this.z*i.z};H.cross=function(j){var i=this.y*j.z-this.z*j.y,aI=this.z*j.x-this.x*j.z,aH=this.x*j.y-this.y*j.x;return new ae(i,aI,aH)};H.angle=function(j){var i=this.dot(j),aH;if(i==0){return Math.PI/2}aH=i/(this.length()*j.length());if(aH>=1){return 0}if(aH<=-1){return Math.PI}return Math.acos(aH)};H.unit=function(){var i=this.length();return new ae(this.x/i,this.y/i,this.z/i)};function aj(aH,j){j=j*Math.PI/180;aH=aH*Math.PI/180;var i=ah(aH)*w(j),aJ=-ah(j),aI=-w(aH)*w(j);return new ae(i,aJ,aI)}function R(i){this[1]={1:i[0],2:i[1],3:i[2]};this[2]={1:i[3],2:i[4],3:i[5]};this[3]={1:i[6],2:i[7],3:i[8]}}aF=R.prototype;R.Identity=function(){return new R([1,0,0,0,1,0,0,0,1])};R.Rotation=function(aI,i){var j=ah(aI),aH=w(aI),aJ=1-aH;return new R([aH+at(i.x,2)*aJ,i.x*i.y*aJ-i.z*j,i.x*i.z*aJ+i.y*j,i.y*i.x*aJ+i.z*j,aH+at(i.y,2)*aJ,i.y*i.z*aJ-i.x*j,i.z*i.x*aJ-i.y*j,i.z*i.y*aJ+i.x*j,aH+at(i.z,2)*aJ])};aF.mul=function(aH){var aI=[],aL,aK,aJ=(aH.xform?1:0);for(aL=1;aL<=3;++aL){for(aK=1;aK<=3;++aK){if(aJ){aI.push(this[aL][1]*aH[1][aK]+this[aL][2]*aH[2][aK]+this[aL][3]*aH[3][aK])}else{aI.push(this[aL][aK]*aH)}}}return new R(aI)};aF.xform=function(aH){var j={},i=aH.x,aJ=aH.y,aI=aH.z;j.x=i*this[1][1]+aJ*this[2][1]+aI*this[3][1];j.y=i*this[1][2]+aJ*this[2][2]+aI*this[3][2];j.z=i*this[1][3]+aJ*this[2][3]+aI*this[3][3];return j};function q(aI,aK,aQ,aN,aP){var aL,aO,j,aM,aR=[],aH=2/aI,aJ;aJ=Math.PI*(3-F(5)+(parseFloat(aP)?parseFloat(aP):0));for(aL=0;aL<aI;++aL){aO=aL*aH-1+(aH/2);j=F(1-aO*aO);aM=aL*aJ;aR.push([w(aM)*j*aK,aO*aQ,ah(aM)*j*aN])}return aR}function W(aJ,aH,aM,aT,aQ,aS){var aR,aU=[],aI=2/aJ,aK,aP,aO,aN,aL;aK=Math.PI*(3-F(5)+(parseFloat(aS)?parseFloat(aS):0));for(aP=0;aP<aJ;++aP){aO=aP*aI-1+(aI/2);aR=aP*aK;aN=w(aR);aL=ah(aR);aU.push(aH?[aO*aM,aN*aT,aL*aQ]:[aN*aM,aO*aT,aL*aQ])}return aU}function N(aH,aI,aL,aR,aP,aN){var aQ,aS=[],aJ=Math.PI*2/aI,aO,aM,aK;for(aO=0;aO<aI;++aO){aQ=aO*aJ;aM=w(aQ);aK=ah(aQ);aS.push(aH?[aN*aL,aM*aR,aK*aP]:[aM*aL,aN*aR,aK*aP])}return aS}function am(aJ,j,aH,aI,i){return W(aJ,0,j,aH,aI,i)}function au(aJ,j,aH,aI,i){return W(aJ,1,j,aH,aI,i)}function d(aJ,i,j,aH,aI){aI=isNaN(aI)?0:aI*1;return N(0,aJ,i,j,aH,aI)}function n(aJ,i,j,aH,aI){aI=isNaN(aI)?0:aI*1;return N(1,aJ,i,j,aH,aI)}function ao(aH){var j=new Image;j.onload=function(){var aI=j.width/2,i=j.height/2;aH.centreFunc=function(aN,aK,aL,aJ,aM){aN.setTransform(1,0,0,1,0,0);aN.globalAlpha=1;aN.drawImage(j,aJ-aI,aM-i)}};j.src=aH.centreImage}function U(aK,i){var aJ=aK,aI,aH,j=(i*1).toPrecision(3)+")";if(aK[0]==="#"){if(!h[aK]){if(aK.length===4){h[aK]="rgba("+m[aK[1]]+m[aK[2]]+m[aK[3]]}else{h[aK]="rgba("+l[aK.substr(1,2)]+l[aK.substr(3,2)]+l[aK.substr(5,2)]}}aJ=h[aK]+j}else{if(aK.substr(0,4)==="rgb("||aK.substr(0,4)==="hsl("){aJ=(aK.replace("(","a(").replace(")",","+j))}else{if(aK.substr(0,5)==="rgba("||aK.substr(0,5)==="hsla("){aI=aK.lastIndexOf(",")+1,aH=aK.indexOf(")");i*=parseFloat(aK.substring(aI,aH));aJ=aK.substr(0,aI)+i.toPrecision(3)+")"}}}return aJ}function P(i,j){if(window.G_vmlCanvasManager){return null}var aH=C.createElement("canvas");aH.width=i;aH.height=j;return aH}function al(){var j=P(3,3),aI,aH;if(!j){return false}aI=j.getContext("2d");aI.strokeStyle="#000";aI.shadowColor="#fff";aI.shadowBlur=3;aI.globalAlpha=0;aI.strokeRect(2,2,2,2);aI.globalAlpha=1;aH=aI.getImageData(2,2,1,1);j=null;return(aH.data[0]>0)}function ak(aL,j,aK,aJ){var aI=aL.createLinearGradient(0,0,j,0),aH;for(aH in aJ){aI.addColorStop(1-aH,aJ[aH])}aL.fillStyle=aI;aL.fillRect(0,aK,j,1)}function k(aJ,aH,j){var aI=1024,aN=1,aM=aJ.weightGradient,aL,aP,aK,aO;if(aJ.gCanvas){aP=aJ.gCanvas.getContext("2d");aN=aJ.gCanvas.height}else{if(I(aM[0])){aN=aM.length}else{aM=[aM]}aJ.gCanvas=aL=P(aI,aN);if(!aL){return null}aP=aL.getContext("2d");for(aK=0;aK<aN;++aK){ak(aP,aI,aK,aM[aK])}}j=s(aD(j||0,aN-1),0);aO=aP.getImageData(~~((aI-1)*aH),j,1,1).data;return"rgba("+aO[0]+","+aO[1]+","+aO[2]+","+(aO[3]/255)+")"}function X(aQ,aJ,j,aU,aT,aR,aP,aL,aI,aS,aK,aO){var aN=aT+(aL||0)+(aI.length&&aI[0]<0?L(aI[0]):0),aH=aR+(aL||0)+(aI.length&&aI[1]<0?L(aI[1]):0),aM,aV;aQ.font=aJ;aQ.textBaseline="top";aQ.fillStyle=j;aP&&(aQ.shadowColor=aP);aL&&(aQ.shadowBlur=aL);aI.length&&(aQ.shadowOffsetX=aI[0],aQ.shadowOffsetY=aI[1]);for(aM=0;aM<aU.length;++aM){aV=0;if(aK){if("right"==aO){aV=aS-aK[aM]}else{if("centre"==aO){aV=(aS-aK[aM])/2}}}aQ.fillText(aU[aM],aN+aV,aH);aH+=parseInt(aJ)}}function ar(aL,i,aK,j,aI,aJ,aH){if(aJ){aL.beginPath();aL.moveTo(i,aK+aI-aJ);aL.arcTo(i,aK,i+aJ,aK,aJ);aL.arcTo(i+j,aK,i+j,aK+aJ,aJ);aL.arcTo(i+j,aK+aI,i+j-aJ,aK+aI,aJ);aL.arcTo(i,aK+aI,i,aK+aI-aJ,aJ);aL.closePath();aL[aH?"stroke":"fill"]()}else{aL[aH?"strokeRect":"fillRect"](i,aK,j,aI)}}function g(aN,i,aL,aI,aM,aH,aJ,aK,j){this.strings=aN;this.font=i;this.width=aL;this.height=aI;this.maxWidth=aM;this.stringWidths=aH;this.align=aJ;this.valign=aK;this.scale=j}aa=g.prototype;aa.SetImage=function(aK,j,aI,i,aJ,aM,aH,aL){this.image=aK;this.iwidth=j*this.scale;this.iheight=aI*this.scale;this.ipos=i;this.ipad=aJ*this.scale;this.iscale=aL;this.ialign=aM;this.ivalign=aH};aa.Align=function(j,aH,i){var aI=0;if(i=="right"||i=="bottom"){aI=aH-j}else{if(i!="left"&&i!="top"){aI=(aH-j)/2}}return aI};aa.Create=function(aU,a0,aT,a1,aZ,aY,i,aX,aP){var aN,aL,aV,a6,a3,a2,aJ,aI,aH,j,aM,aK,aO,aW,aS,a5=L(i[0]),a4=L(i[1]),aQ,aR;aX=s(aX,a5+aY,a4+aY);a3=2*(aX+a1);aJ=2*(aX+a1);aL=this.width+a3;aV=this.height+aJ;aH=j=aX+a1;if(this.image){aM=aK=aX+a1;aO=this.iwidth;aW=this.iheight;if(this.ipos=="top"||this.ipos=="bottom"){if(aO<this.width){aM+=this.Align(aO,this.width,this.ialign)}else{aH+=this.Align(this.width,aO,this.align)}if(this.ipos=="top"){j+=aW+this.ipad}else{aK+=this.height+this.ipad}aL=s(aL,aO+a3);aV+=aW+this.ipad}else{if(aW<this.height){aK+=this.Align(aW,this.height,this.ivalign)}else{j+=this.Align(this.height,aW,this.valign)}if(this.ipos=="right"){aM+=this.width+this.ipad}else{aH+=aO+this.ipad}aL+=aO+this.ipad;aV=s(aV,aW+aJ)}}aN=P(aL,aV);if(!aN){return null}a3=aJ=a1/2;a2=aL-a1;aI=aV-a1;aS=aD(aP,a2/2,aI/2);a6=aN.getContext("2d");if(a0){a6.fillStyle=a0;ar(a6,a3,aJ,a2,aI,aS)}if(a1){a6.strokeStyle=aT;a6.lineWidth=a1;ar(a6,a3,aJ,a2,aI,aS,true)}if(aY||a5||a4){aQ=P(aL,aV);if(aQ){aR=a6;a6=aQ.getContext("2d")}}X(a6,this.font,aU,this.strings,aH,j,0,0,[],this.maxWidth,this.stringWidths,this.align);if(this.image){a6.drawImage(this.image,aM,aK,aO,aW)}if(aR){a6=aR;aZ&&(a6.shadowColor=aZ);aY&&(a6.shadowBlur=aY);a6.shadowOffsetX=i[0];a6.shadowOffsetY=i[1];a6.drawImage(aQ,0,0)}return aN};function v(aI,j,aJ){var aH=P(j,aJ),aK;if(!aH){return null}aK=aH.getContext("2d");aK.drawImage(aI,(j-aI.width)/2,(aJ-aI.height)/2);return aH}function ax(aI,j,aJ){var aH=P(j,aJ),aK;if(!aH){return null}aK=aH.getContext("2d");aK.drawImage(aI,0,0,j,aJ);return aH}function aC(aU,aP,aV,aZ,aQ,aO,aM,aS,aK,aL){var aI=aP+((2*aS)+aO)*aZ,aR=aV+((2*aS)+aO)*aZ,aJ=P(aI,aR),aY,aX,aH,aW,j,a0,aT,aN;if(!aJ){return null}aO*=aZ;aK*=aZ;aX=aH=aO/2;aW=aI-aO;j=aR-aO;aS=(aS*aZ)+aX;aY=aJ.getContext("2d");aN=aD(aK,aW/2,j/2);if(aQ){aY.fillStyle=aQ;ar(aY,aX,aH,aW,j,aN)}if(aO){aY.strokeStyle=aM;aY.lineWidth=aO;ar(aY,aX,aH,aW,j,aN,true)}if(aL){a0=P(aI,aR);aT=a0.getContext("2d");aT.drawImage(aU,aS,aS,aP,aV);aT.globalCompositeOperation="source-in";aT.fillStyle=aM;aT.fillRect(0,0,aI,aR);aT.globalCompositeOperation="destination-over";aT.drawImage(aJ,0,0);aT.globalCompositeOperation="source-over";aY.drawImage(a0,0,0)}else{aY.drawImage(aU,aS,aS,aU.width,aU.height)}return{image:aJ,width:aI/aZ,height:aR/aZ}}function aq(aK,j,aJ,aN,aO){var aL,aM,aH=parseFloat(j),aI=s(aJ,aN);aL=P(aJ,aN);if(!aL){return null}if(j.indexOf("%")>0){aH=aI*aH/100}else{aH=aH*aO}aM=aL.getContext("2d");aM.globalCompositeOperation="source-over";aM.fillStyle="#fff";if(aH>=aI/2){aH=aD(aJ,aN)/2;aM.beginPath();aM.moveTo(aJ/2,aN/2);aM.arc(aJ/2,aN/2,aH,0,2*Math.PI,false);aM.fill();aM.closePath()}else{aH=aD(aJ/2,aN/2,aH);ar(aM,0,0,aJ,aN,aH,true);aM.fill()}aM.globalCompositeOperation="source-in";aM.drawImage(aK,0,0,aJ,aN);return aL}function Z(aN,aT,aP,aJ,aR,aS,aI){var aU=L(aI[0]),aO=L(aI[1]),aK=aT+(aU>aS?aU+aS:aS*2)*aJ,j=aP+(aO>aS?aO+aS:aS*2)*aJ,aM=aJ*((aS||0)+(aI[0]<0?aU:0)),aH=aJ*((aS||0)+(aI[1]<0?aO:0)),aL,aQ;aL=P(aK,j);if(!aL){return null}aQ=aL.getContext("2d");aR&&(aQ.shadowColor=aR);aS&&(aQ.shadowBlur=aS*aJ);aI&&(aQ.shadowOffsetX=aI[0]*aJ,aQ.shadowOffsetY=aI[1]*aJ);aQ.drawImage(aN,aM,aH,aT,aP);return{image:aL,width:aK/aJ,height:j/aJ}}function t(aT,aL,aR){var aS=parseInt(aT.toString().length*aR),aK=parseInt(aR*2*aT.length),aI=P(aS,aK),aO,j,aJ,aN,aQ,aP,aH,aM;if(!aI){return null}aO=aI.getContext("2d");aO.fillStyle="#000";aO.fillRect(0,0,aS,aK);X(aO,aR+"px "+aL,"#fff",aT,0,0,0,0,[],"centre");j=aO.getImageData(0,0,aS,aK);aJ=j.width;aN=j.height;aM={min:{x:aJ,y:aN},max:{x:-1,y:-1}};for(aP=0;aP<aN;++aP){for(aQ=0;aQ<aJ;++aQ){aH=(aP*aJ+aQ)*4;if(j.data[aH+1]>0){if(aQ<aM.min.x){aM.min.x=aQ}if(aQ>aM.max.x){aM.max.x=aQ}if(aP<aM.min.y){aM.min.y=aP}if(aP>aM.max.y){aM.max.y=aP}}}}if(aJ!=aS){aM.min.x*=(aS/aJ);aM.max.x*=(aS/aJ)}if(aN!=aK){aM.min.y*=(aS/aN);aM.max.y*=(aS/aN)}aI=null;return aM}function o(i){return"'"+i.replace(/(\'|\")/g,"").replace(/\s*,\s*/g,"', '")+"'"}function ad(i,j,aH){aH=aH||C;if(aH.addEventListener){aH.addEventListener(i,j,false)}else{aH.attachEvent("on"+i,j)}}function a(i,j,aH){aH=aH||C;if(aH.removeEventListener){aH.removeEventListener(i,j)}else{aH.detachEvent("on"+i,j)}}function aw(aL,aH,aP,aK){var aQ=aK.imageScale,aN,aI,aM,j,aJ,aO;if(!aH.complete){return ad("load",function(){aw(aL,aH,aP,aK)},aH)}if(!aL.complete){return ad("load",function(){aw(aL,aH,aP,aK)},aL)}aH.width=aH.width;aH.height=aH.height;if(aQ){aL.width=aH.width*aQ;aL.height=aH.height*aQ}aP.iw=aL.width;aP.ih=aL.height;if(aK.txtOpt){aI=aL;aN=aK.zoomMax*aK.txtScale;aJ=aP.iw*aN;aO=aP.ih*aN;if(aJ<aH.naturalWidth||aO<aH.naturalHeight){aI=ax(aL,aJ,aO);if(aI){aP.fimage=aI}}else{aJ=aP.iw;aO=aP.ih;aN=1}if(parseFloat(aK.imageRadius)){aP.image=aP.fimage=aL=aq(aP.image,aK.imageRadius,aJ,aO,aN)}if(!aP.HasText()){if(aK.shadow){aI=Z(aP.image,aJ,aO,aN,aK.shadow,aK.shadowBlur,aK.shadowOffset);if(aI){aP.fimage=aI.image;aP.w=aI.width;aP.h=aI.height}}if(aK.bgColour||aK.bgOutlineThickness){aM=aK.bgColour=="tag"?Y(aP.a,"background-color"):aK.bgColour;j=aK.bgOutline=="tag"?Y(aP.a,"color"):(aK.bgOutline||aK.textColour);aJ=aP.fimage.width;aO=aP.fimage.height;if(aK.outlineMethod=="colour"){aI=aC(aP.fimage,aJ,aO,aN,aM,aK.bgOutlineThickness,aP.outline.colour,aK.padding,aK.bgRadius,1);if(aI){aP.oimage=aI.image}}aI=aC(aP.fimage,aJ,aO,aN,aM,aK.bgOutlineThickness,j,aK.padding,aK.bgRadius);if(aI){aP.fimage=aI.image;aP.w=aI.width;aP.h=aI.height}}if(aK.outlineMethod=="size"){if(aK.outlineIncrease>0){aP.iw+=2*aK.outlineIncrease;aP.ih+=2*aK.outlineIncrease;aJ=aN*aP.iw;aO=aN*aP.ih;aI=ax(aP.fimage,aJ,aO);aP.oimage=aI;aP.fimage=v(aP.fimage,aP.oimage.width,aP.oimage.height)}else{aJ=aN*(aP.iw+(2*aK.outlineIncrease));aO=aN*(aP.ih+(2*aK.outlineIncrease));aI=ax(aP.fimage,aJ,aO);aP.oimage=v(aI,aP.fimage.width,aP.fimage.height)}}}}aP.Init()}function Y(aI,aH){var j=C.defaultView,i=aH.replace(/\-([a-z])/g,function(aJ){return aJ.charAt(1).toUpperCase()});return(j&&j.getComputedStyle&&j.getComputedStyle(aI,null).getPropertyValue(aH))||(aI.currentStyle&&aI.currentStyle[i])}function u(j,aI,aH){var i=1,aJ;if(aI){i=1*(j.getAttribute(aI)||aH)}else{if(aJ=Y(j,"font-size")){i=(aJ.indexOf("px")>-1&&aJ.replace("px","")*1)||(aJ.indexOf("pt")>-1&&aJ.replace("pt","")*1.25)||aJ*3.3}}return i}function f(i){return i.target&&ai(i.target.id)?i.target.id:i.srcElement.parentNode.id}function S(aJ,aK){var aI,aH,i=parseInt(Y(aK,"width"))/aK.width,j=parseInt(Y(aK,"height"))/aK.height;if(ai(aJ.offsetX)){aI={x:aJ.offsetX,y:aJ.offsetY}}else{aH=ab(aK.id);if(ai(aJ.changedTouches)){aJ=aJ.changedTouches[0]}if(aJ.pageX){aI={x:aJ.pageX-aH.x,y:aJ.pageY-aH.y}}}if(aI&&i&&j){aI.x/=i;aI.y/=j}return aI}function B(aH){var j=aH.target||aH.fromElement.parentNode,i=y.tc[j.id];if(i){i.mx=i.my=-1;i.UnFreeze();i.EndDrag()}}function af(aL){var aI,aH=y,j,aK,aJ=f(aL);for(aI in aH.tc){j=aH.tc[aI];if(j.tttimer){clearTimeout(j.tttimer);j.tttimer=null}}if(aJ&&aH.tc[aJ]){j=aH.tc[aJ];if(aK=S(aL,j.canvas)){j.mx=aK.x;j.my=aK.y;j.Drag(aL,aK)}j.drawn=0}}function z(aI){var j=y,i=C.addEventListener?0:1,aH=f(aI);if(aH&&aI.button==i&&j.tc[aH]){j.tc[aH].BeginDrag(aI)}}function aE(aJ){var aH=y,j=C.addEventListener?0:1,aI=f(aJ),i;if(aI&&aJ.button==j&&aH.tc[aI]){i=aH.tc[aI];af(aJ);if(!i.EndDrag()&&!i.touchState){i.Clicked(aJ)}}}function T(aI){var j=f(aI),i=(j&&y.tc[j]),aH;if(i&&aI.changedTouches){if(aI.touches.length==1&&i.touchState==0){i.touchState=1;i.BeginDrag(aI);if(aH=S(aI,i.canvas)){i.mx=aH.x;i.my=aH.y;i.drawn=0}}else{if(aI.targetTouches.length==2&&i.pinchZoom){i.touchState=3;i.EndDrag();i.BeginPinch(aI)}else{i.EndDrag();i.EndPinch();i.touchState=0}}}}function r(aH){var j=f(aH),i=(j&&y.tc[j]);if(i&&aH.changedTouches){switch(i.touchState){case 1:i.Draw();i.Clicked();break;case 2:i.EndDrag();break;case 3:i.EndPinch()}i.touchState=0}}function az(aL){var aI,aH=y,j,aK,aJ=f(aL);for(aI in aH.tc){j=aH.tc[aI];if(j.tttimer){clearTimeout(j.tttimer);j.tttimer=null}}j=(aJ&&aH.tc[aJ]);if(j&&aL.changedTouches&&j.touchState){switch(j.touchState){case 1:case 2:if(aK=S(aL,j.canvas)){j.mx=aK.x;j.my=aK.y;if(j.Drag(aL,aK)){j.touchState=2}}break;case 3:j.Pinch(aL)}j.drawn=0}}function ag(aH){var i=y,j=f(aH);if(j&&i.tc[j]){aH.cancelBubble=true;aH.returnValue=false;aH.preventDefault&&aH.preventDefault();i.tc[j].Wheel((aH.wheelDelta||aH.detail)>0)}}function ac(aI){var aH,j=y;clearTimeout(j.scrollTimer);for(aH in j.tc){j.tc[aH].Pause()}j.scrollTimer=setTimeout(function(){var aK,aJ=y;for(aK in aJ.tc){aJ.tc[aK].Resume()}},j.scrollPause)}function O(){E(G())}function E(aI){var j=y.tc,aH;y.NextFrame(y.interval);aI=aI||G();for(aH in j){j[aH].Draw(aI)}}function ab(aH){var aK=C.getElementById(aH),i=aK.getBoundingClientRect(),aN=C.documentElement,aL=C.body,aM=window,aI=aM.pageXOffset||aN.scrollLeft,aO=aM.pageYOffset||aN.scrollTop,aJ=aN.clientLeft||aL.clientLeft,j=aN.clientTop||aL.clientTop;return{x:i.left+aI-aJ,y:i.top+aO-j}}function V(j,aI,aJ,aH){var i=j.radius*j.z1/(j.z1+j.z2+aI.z);return{x:aI.x*i*aJ,y:aI.y*i*aH,z:aI.z,w:(j.z1-aI.z)/j.z2}}function aB(i){this.e=i;this.br=0;this.line=[];this.text=[];this.original=i.innerText||i.textContent}aG=aB.prototype;aG.Empty=function(){for(var j=0;j<this.text.length;++j){if(this.text[j].length){return false}}return true};aG.Lines=function(aJ){var aI=aJ?1:0,aK,j,aH;aJ=aJ||this.e;aK=aJ.childNodes;j=aK.length;for(aH=0;aH<j;++aH){if(aK[aH].nodeName=="BR"){this.text.push(this.line.join(" "));this.br=1}else{if(aK[aH].nodeType==3){if(this.br){this.line=[aK[aH].nodeValue];this.br=0}else{this.line.push(aK[aH].nodeValue)}}else{this.Lines(aK[aH])}}}aI||this.br||this.text.push(this.line.join(" "));return this.text};aG.SplitWidth=function(aH,aO,aL,aK){var aJ,aI,aN,aM=[];aO.font=aK+"px "+aL;for(aJ=0;aJ<this.text.length;++aJ){aN=this.text[aJ].split(/\s+/);this.line=[aN[0]];for(aI=1;aI<aN.length;++aI){if(aO.measureText(this.line.join(" ")+" "+aN[aI]).width>aH){aM.push(this.line.join(" "));this.line=[aN[aI]]}else{this.line.push(aN[aI])}}aM.push(this.line.join(" "))}return this.text=aM};function J(i,j){this.ts=null;this.tc=i;this.tag=j;this.x=this.y=this.w=this.h=this.sc=1;this.z=0;this.pulse=1;this.pulsate=i.pulsateTo<1;this.colour=i.outlineColour;this.adash=~~i.outlineDash;this.agap=~~i.outlineDashSpace||this.adash;this.aspeed=i.outlineDashSpeed*1;if(this.colour=="tag"){this.colour=Y(j.a,"color")}else{if(this.colour=="tagbg"){this.colour=Y(j.a,"background-color")}}this.Draw=this.pulsate?this.DrawPulsate:this.DrawSimple;this.radius=i.outlineRadius|0;this.SetMethod(i.outlineMethod)}x=J.prototype;x.SetMethod=function(aH){var j={block:["PreDraw","DrawBlock"],colour:["PreDraw","DrawColour"],outline:["PostDraw","DrawOutline"],classic:["LastDraw","DrawOutline"],size:["PreDraw","DrawSize"],none:["LastDraw"]},i=j[aH]||j.outline;if(aH=="none"){this.Draw=function(){return 1}}else{this.drawFunc=this[i[1]]}this[i[0]]=this.Draw};x.Update=function(aN,aM,aO,aJ,aK,aL,aI,i){var j=this.tc.outlineOffset,aH=2*j;this.x=aK*aN+aI-j;this.y=aK*aM+i-j;this.w=aK*aO+aH;this.h=aK*aJ+aH;this.sc=aK;this.z=aL};x.Ants=function(aM){if(!this.adash){return}var aJ=this.adash,aL=this.agap,aP=this.aspeed,j=aJ+aL,aK=0,aI=aJ,i=aL,aO=0,aN=0,aH;if(aP){aN=L(aP)*(G()-this.ts)/50;if(aP<0){aN=8640000-aN}aP=~~aN%j}if(aP){if(aJ>=aP){aK=aJ-aP;aI=aP}else{i=j-aP;aO=aL-i}aH=[aK,i,aI,aO]}else{aH=[aJ,aL]}aM.setLineDash(aH)};x.DrawOutline=function(aL,i,aK,j,aH,aJ){var aI=aD(this.radius,aH/2,j/2);aL.strokeStyle=aJ;this.Ants(aL);ar(aL,i,aK,j,aH,aI,true)};x.DrawSize=function(aO,aR,aP,aS,aM,j,aT,aI,aQ){var aL=aT.w,aH=aT.h,aJ,aK,aN;if(this.pulsate){if(aT.image){aN=(aT.image.height+this.tc.outlineIncrease)/aT.image.height}else{aN=aT.oscale}aK=aT.fimage||aT.image;aJ=1+((aN-1)*(1-this.pulse));aT.h*=aJ;aT.w*=aJ}else{aK=aT.oimage}aT.alpha=1;aT.Draw(aO,aI,aQ,aK);aT.h=aH;aT.w=aL;return 1};x.DrawColour=function(aI,aL,aJ,aM,aH,i,aN,j,aK){if(aN.oimage){if(this.pulse<1){aN.alpha=1-at(this.pulse,2);aN.Draw(aI,j,aK,aN.fimage);aN.alpha=this.pulse}else{aN.alpha=1}aN.Draw(aI,j,aK,aN.oimage);return 1}return this[aN.image?"DrawColourImage":"DrawColourText"](aI,aL,aJ,aM,aH,i,aN,j,aK)};x.DrawColourText=function(aJ,aM,aK,aN,aH,i,aO,j,aL){var aI=aO.colour;aO.colour=i;aO.alpha=1;aO.Draw(aJ,j,aL);aO.colour=aI;return 1};x.DrawColourImage=function(aM,aP,aN,aQ,aL,i,aT,j,aO){var aR=aM.canvas,aJ=~~s(aP,0),aI=~~s(aN,0),aK=aD(aR.width-aJ,aQ)+0.5|0,aS=aD(aR.height-aI,aL)+0.5|0,aH;if(p){p.width=aK,p.height=aS}else{p=P(aK,aS)}if(!p){return this.SetMethod("outline")}aH=p.getContext("2d");aH.drawImage(aR,aJ,aI,aK,aS,0,0,aK,aS);aM.clearRect(aJ,aI,aK,aS);if(this.pulsate){aT.alpha=1-at(this.pulse,2)}else{aT.alpha=1}aT.Draw(aM,j,aO);aM.setTransform(1,0,0,1,0,0);aM.save();aM.beginPath();aM.rect(aJ,aI,aK,aS);aM.clip();aM.globalCompositeOperation="source-in";aM.fillStyle=i;aM.fillRect(aJ,aI,aK,aS);aM.restore();aM.globalAlpha=1;aM.globalCompositeOperation="destination-over";aM.drawImage(p,0,0,aK,aS,aJ,aI,aK,aS);aM.globalCompositeOperation="source-over";return 1};x.DrawBlock=function(aL,i,aK,j,aH,aJ){var aI=aD(this.radius,aH/2,j/2);aL.fillStyle=aJ;ar(aL,i,aK,j,aH,aI)};x.DrawSimple=function(aL,i,j,aI,aK,aJ){var aH=this.tc;aL.setTransform(1,0,0,1,0,0);aL.strokeStyle=this.colour;aL.lineWidth=aH.outlineThickness;aL.shadowBlur=aL.shadowOffsetX=aL.shadowOffsetY=0;aL.globalAlpha=aJ?aK:1;return this.drawFunc(aL,this.x,this.y,this.w,this.h,this.colour,i,j,aI)};x.DrawPulsate=function(aL,i,j,aI){var aJ=G()-this.ts,aH=this.tc,aK=aH.pulsateTo+((1-aH.pulsateTo)*(0.5+(w(2*Math.PI*aJ/(1000*aH.pulsateTime))/2)));this.pulse=aK=y.Smooth(1,aK);return this.DrawSimple(aL,i,j,aI,aK,1)};x.Active=function(aI,i,aH){var j=(i>=this.x&&aH>=this.y&&i<=this.x+this.w&&aH<=this.y+this.h);if(j){this.ts=this.ts||G()}else{this.ts=null}return j};x.PreDraw=x.PostDraw=x.LastDraw=aA;function e(aI,aS,aO,aR,aP,aJ,aH,aL,aQ,aK,aN,j,aM,i){this.tc=aI;this.image=null;this.text=aS;this.text_original=i;this.line_widths=[];this.title=aO.title||null;this.a=aO;this.position=new ae(aR[0],aR[1],aR[2]);this.x=this.y=this.z=0;this.w=aP;this.h=aJ;this.colour=aH||aI.textColour;this.bgColour=aL||aI.bgColour;this.bgRadius=aQ|0;this.bgOutline=aK||this.colour;this.bgOutlineThickness=aN|0;this.textFont=j||aI.textFont;this.padding=aM|0;this.sc=this.alpha=1;this.weighted=!aI.weight;this.outline=new J(aI,this)}c=e.prototype;c.Init=function(j){var i=this.tc;this.textHeight=i.textHeight;if(this.HasText()){this.Measure(i.ctxt,i)}else{this.w=this.iw;this.h=this.ih}this.SetShadowColour=i.shadowAlpha?this.SetShadowColourAlpha:this.SetShadowColourFixed;this.SetDraw(i)};c.Draw=aA;c.HasText=function(){return this.text&&this.text[0].length>0};c.EqualTo=function(aH){var j=aH.getElementsByTagName("img");if(this.a.href!=aH.href){return 0}if(j.length){return this.image.src==j[0].src}return(aH.innerText||aH.textContent)==this.text_original};c.SetImage=function(j){this.image=this.fimage=j};c.SetDraw=function(i){this.Draw=this.fimage?(i.ie>7?this.DrawImageIE:this.DrawImage):this.DrawText;i.noSelect&&(this.CheckActive=aA)};c.MeasureText=function(aK){var aI,aH=this.text.length,j=0,aJ;for(aI=0;aI<aH;++aI){this.line_widths[aI]=aJ=aK.measureText(this.text[aI]).width;j=s(j,aJ)}return j};c.Measure=function(aM,aP){var aN=t(this.text,this.textFont,this.textHeight),aQ,i,aJ,j,aH,aL,aO,aI,aK;aO=aN?aN.max.y+aN.min.y:this.textHeight;aM.font=this.font=this.textHeight+"px "+this.textFont;aL=this.MeasureText(aM);if(aP.txtOpt){aQ=aP.txtScale;i=aQ*this.textHeight;aJ=i+"px "+this.textFont;j=[aQ*aP.shadowOffset[0],aQ*aP.shadowOffset[1]];aM.font=aJ;aH=this.MeasureText(aM);aK=new g(this.text,aJ,aH+aQ,(aQ*aO)+aQ,aH,this.line_widths,aP.textAlign,aP.textVAlign,aQ);if(this.image){aK.SetImage(this.image,this.iw,this.ih,aP.imagePosition,aP.imagePadding,aP.imageAlign,aP.imageVAlign,aP.imageScale)}aI=aK.Create(this.colour,this.bgColour,this.bgOutline,aQ*this.bgOutlineThickness,aP.shadow,aQ*aP.shadowBlur,j,aQ*this.padding,aQ*this.bgRadius);if(aP.outlineMethod=="colour"){this.oimage=aK.Create(this.outline.colour,this.bgColour,this.outline.colour,aQ*this.bgOutlineThickness,aP.shadow,aQ*aP.shadowBlur,j,aQ*this.padding,aQ*this.bgRadius)}else{if(aP.outlineMethod=="size"){aN=t(this.text,this.textFont,this.textHeight+aP.outlineIncrease);i=aN.max.y+aN.min.y;aJ=(aQ*(this.textHeight+aP.outlineIncrease))+"px "+this.textFont;aM.font=aJ;aH=this.MeasureText(aM);aK=new g(this.text,aJ,aH+aQ,(aQ*i)+aQ,aH,this.line_widths,aP.textAlign,aP.textVAlign,aQ);if(this.image){aK.SetImage(this.image,this.iw+aP.outlineIncrease,this.ih+aP.outlineIncrease,aP.imagePosition,aP.imagePadding,aP.imageAlign,aP.imageVAlign,aP.imageScale)}this.oimage=aK.Create(this.colour,this.bgColour,this.bgOutline,aQ*this.bgOutlineThickness,aP.shadow,aQ*aP.shadowBlur,j,aQ*this.padding,aQ*this.bgRadius);this.oscale=this.oimage.width/aI.width;if(aP.outlineIncrease>0){aI=v(aI,this.oimage.width,this.oimage.height)}else{this.oimage=v(this.oimage,aI.width,aI.height)}}}if(aI){this.fimage=aI;aL=this.fimage.width/aQ;aO=this.fimage.height/aQ}this.SetDraw(aP);aP.txtOpt=!!this.fimage}this.h=aO;this.w=aL};c.SetFont=function(j,aI,aH,i){this.textFont=j;this.colour=aI;this.bgColour=aH;this.bgOutline=i;this.Measure(this.tc.ctxt,this.tc)};c.SetWeight=function(aH){var j=this.tc,aJ=j.weightMode.split(/[, ]/),i,aI,aK=aH.length;if(!this.HasText()){return}this.weighted=true;for(aI=0;aI<aK;++aI){i=aJ[aI]||"size";if("both"==i){this.Weight(aH[aI],j.ctxt,j,"size",j.min_weight[aI],j.max_weight[aI],aI);this.Weight(aH[aI],j.ctxt,j,"colour",j.min_weight[aI],j.max_weight[aI],aI)}else{this.Weight(aH[aI],j.ctxt,j,i,j.min_weight[aI],j.max_weight[aI],aI)}}this.Measure(j.ctxt,j)};c.Weight=function(aH,aM,aI,j,aL,aJ,aK){aH=isNaN(aH)?1:aH;var i=(aH-aL)/(aJ-aL);if("colour"==j){this.colour=k(aI,i,aK)}else{if("bgcolour"==j){this.bgColour=k(aI,i,aK)}else{if("bgoutline"==j){this.bgOutline=k(aI,i,aK)}else{if("outline"==j){this.outline.colour=k(aI,i,aK)}else{if("size"==j){if(aI.weightSizeMin>0&&aI.weightSizeMax>aI.weightSizeMin){this.textHeight=aI.weightSize*(aI.weightSizeMin+(aI.weightSizeMax-aI.weightSizeMin)*i)}else{this.textHeight=s(1,aH*aI.weightSize)}}}}}}};c.SetShadowColourFixed=function(aH,j,i){aH.shadowColor=j};c.SetShadowColourAlpha=function(aH,j,i){aH.shadowColor=U(j,i)};c.DrawText=function(aJ,aM,aI){var aN=this.tc,aL=this.x,aK=this.y,aO=this.sc,j,aH;aJ.globalAlpha=this.alpha;aJ.fillStyle=this.colour;aN.shadow&&this.SetShadowColour(aJ,aN.shadow,this.alpha);aJ.font=this.font;aL+=aM/aO;aK+=(aI/aO)-(this.h/2);for(j=0;j<this.text.length;++j){aH=aL;if("right"==aN.textAlign){aH+=this.w/2-this.line_widths[j]}else{if("centre"==aN.textAlign){aH-=this.line_widths[j]/2}else{aH-=this.w/2}}aJ.setTransform(aO,0,0,aO,aO*aH,aO*aK);aJ.fillText(this.text[j],0,0);aK+=this.textHeight}};c.DrawImage=function(aJ,aQ,aI,aL){var aN=this.x,aK=this.y,aR=this.sc,j=aL||this.fimage,aO=this.w,aH=this.h,aM=this.alpha,aP=this.shadow;aJ.globalAlpha=aM;aP&&this.SetShadowColour(aJ,aP,aM);aN+=(aQ/aR)-(aO/2);aK+=(aI/aR)-(aH/2);aJ.setTransform(aR,0,0,aR,aR*aN,aR*aK);aJ.drawImage(j,0,0,aO,aH)};c.DrawImageIE=function(aJ,aN,aI){var j=this.fimage,aO=this.sc,aM=j.width=this.w*aO,aH=j.height=this.h*aO,aL=(this.x*aO)+aN-(aM/2),aK=(this.y*aO)+aI-(aH/2);aJ.setTransform(1,0,0,1,0,0);aJ.globalAlpha=this.alpha;aJ.drawImage(j,aL,aK)};c.Calc=function(i,aH){var j,aK=this.tc,aJ=aK.minBrightness,aI=aK.maxBrightness,aL=aK.max_radius;j=i.xform(this.position);this.xformed=j;j=V(aK,j,aK.stretchX,aK.stretchY);this.x=j.x;this.y=j.y;this.z=j.z;this.sc=j.w;this.alpha=aH*av(aJ+(aI-aJ)*(aL-this.z)/(2*aL),0,1);return this.xformed};c.UpdateActive=function(aM,aH,aK){var aJ=this.outline,j=this.w,aI=this.h,i=this.x-j/2,aL=this.y-aI/2;aJ.Update(i,aL,j,aI,this.sc,this.z,aH,aK);return aJ};c.CheckActive=function(aJ,i,aI){var j=this.tc,aH=this.UpdateActive(aJ,i,aI);return aH.Active(aJ,j.mx,j.my)?aH:null};c.Clicked=function(aK){var j=this.a,aH=j.target,aI=j.href,i;if(aH!=""&&aH!="_self"){if(self.frames[aH]){self.frames[aH].document.location=aI}else{try{if(top.frames[aH]){top.frames[aH].document.location=aI;return}}catch(aJ){}window.open(aI,aH)}return}if(C.createEvent){i=C.createEvent("MouseEvents");i.initMouseEvent("click",1,1,window,0,0,0,0,0,0,0,0,0,0,null);if(!j.dispatchEvent(i)){return}}else{if(j.fireEvent){if(!j.fireEvent("onclick")){return}}}C.location=aI};function y(aN,j,aI){var aH,aK,aM=C.getElementById(aN),aJ=["id","class","innerHTML"],aL;if(!aM){throw 0}if(ai(window.G_vmlCanvasManager)){aM=window.G_vmlCanvasManager.initElement(aM);this.ie=parseFloat(navigator.appVersion.split("MSIE")[1])}if(aM&&(!aM.getContext||!aM.getContext("2d").fillText)){aK=C.createElement("DIV");for(aH=0;aH<aJ.length;++aH){aK[aJ[aH]]=aM[aJ[aH]]}aM.parentNode.insertBefore(aK,aM);aM.parentNode.removeChild(aM);throw 0}for(aH in y.options){this[aH]=aI&&ai(aI[aH])?aI[aH]:(ai(y[aH])?y[aH]:y.options[aH])}this.canvas=aM;this.ctxt=aM.getContext("2d");this.z1=250/s(this.depth,0.001);this.z2=this.z1/this.zoom;this.radius=aD(aM.height,aM.width)*0.0075;this.max_radius=100;this.max_weight=[];this.min_weight=[];this.textFont=this.textFont&&o(this.textFont);this.textHeight*=1;this.imageRadius=this.imageRadius.toString();this.pulsateTo=av(this.pulsateTo,0,1);this.minBrightness=av(this.minBrightness,0,1);this.maxBrightness=av(this.maxBrightness,this.minBrightness,1);this.ctxt.textBaseline="top";this.lx=(this.lock+"").indexOf("x")+1;this.ly=(this.lock+"").indexOf("y")+1;this.frozen=this.dx=this.dy=this.fixedAnim=this.touchState=0;this.fixedAlpha=1;this.source=j||aN;this.repeatTags=aD(64,~~this.repeatTags);this.minTags=aD(200,~~this.minTags);if(~~this.scrollPause>0){y.scrollPause=~~this.scrollPause}else{this.scrollPause=0}if(this.minTags>0&&this.repeatTags<1&&(aH=this.GetTags().length)){this.repeatTags=ap(this.minTags/aH)-1}this.transform=R.Identity();this.startTime=this.time=G();this.mx=this.my=-1;this.centreImage&&ao(this);this.Animate=this.dragControl?this.AnimateDrag:this.AnimatePosition;this.animTiming=(typeof y[this.animTiming]=="function"?y[this.animTiming]:y.Smooth);if(this.shadowBlur||this.shadowOffset[0]||this.shadowOffset[1]){this.ctxt.shadowColor=this.shadow;this.shadow=this.ctxt.shadowColor;this.shadowAlpha=al()}else{delete this.shadow}this.Load();if(j&&this.hideTags){(function(i){if(y.loaded){i.HideTags()}else{ad("load",function(){i.HideTags()},window)}})(this)}this.yaw=this.initial?this.initial[0]*this.maxSpeed:0;this.pitch=this.initial?this.initial[1]*this.maxSpeed:0;if(this.tooltip){this.ctitle=aM.title;aM.title="";if(this.tooltip=="native"){this.Tooltip=this.TooltipNative}else{this.Tooltip=this.TooltipDiv;if(!this.ttdiv){this.ttdiv=C.createElement("div");this.ttdiv.className=this.tooltipClass;this.ttdiv.style.position="absolute";this.ttdiv.style.zIndex=aM.style.zIndex+1;ad("mouseover",function(i){i.target.style.display="none"},this.ttdiv);C.body.appendChild(this.ttdiv)}}}else{this.Tooltip=this.TooltipNone}if(!this.noMouse&&!b[aN]){b[aN]=[["mousemove",af],["mouseout",B],["mouseup",aE],["touchstart",T],["touchend",r],["touchcancel",r],["touchmove",az]];if(this.dragControl){b[aN].push(["mousedown",z]);b[aN].push(["selectstart",aA])}if(this.wheelZoom){b[aN].push(["mousewheel",ag]);b[aN].push(["DOMMouseScroll",ag])}if(this.scrollPause){b[aN].push(["scroll",ac,window])}for(aH=0;aH<b[aN].length;++aH){aK=b[aN][aH];ad(aK[0],aK[1],aK[2]?aK[2]:aM)}}if(!y.started){aL=window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;y.NextFrame=aL?y.NextFrameRAF:y.NextFrameTimeout;y.interval=this.interval;y.NextFrame(this.interval);y.started=1}}Q=y.prototype;Q.SourceElements=function(){if(C.querySelectorAll){return C.querySelectorAll("#"+this.source)}return[C.getElementById(this.source)]};Q.HideTags=function(){var aH=this.SourceElements(),j;for(j=0;j<aH.length;++j){aH[j].style.display="none"}};Q.GetTags=function(){var aM=this.SourceElements(),aL,aI=[],aK,aJ,aH;for(aH=0;aH<=this.repeatTags;++aH){for(aK=0;aK<aM.length;++aK){aL=aM[aK].getElementsByTagName("a");for(aJ=0;aJ<aL.length;++aJ){aI.push(aL[aJ])}}}return aI};Q.Message=function(aM){var aO=[],aI,j,aH=aM.split(""),aK,aN,aL,aJ;for(aI=0;aI<aH.length;++aI){if(aH[aI]!=" "){j=aI-aH.length/2;aK=C.createElement("A");aK.href="#";aK.innerText=aH[aI];aL=100*ah(j/9);aJ=-100*w(j/9);aN=new e(this,aH[aI],aK,[aL,0,aJ],2,18,"#000","#fff",0,0,0,"monospace",2,aH[aI]);aN.Init();aO.push(aN)}}return aO};Q.CreateTag=function(aL){var aO,aJ,aP,aK,aN,aH,aM,aI,j=[0,0,0];if("text"!=this.imageMode){aO=aL.getElementsByTagName("img");if(aO.length){aJ=new Image;aJ.src=aO[0].src;if(!this.imageMode){aP=new e(this,"",aL,j,0,0);aP.SetImage(aJ);aw(aJ,aO[0],aP,this);return aP}}}if("image"!=this.imageMode){aN=new aB(aL);aK=aN.Lines();if(!aN.Empty()){aH=this.textFont||o(Y(aL,"font-family"));if(this.splitWidth){aK=aN.SplitWidth(this.splitWidth,this.ctxt,aH,this.textHeight)}aM=this.bgColour=="tag"?Y(aL,"background-color"):this.bgColour;aI=this.bgOutline=="tag"?Y(aL,"color"):this.bgOutline}else{aN=null}}if(aN||aJ){aP=new e(this,aK,aL,j,2,this.textHeight+2,this.textColour||Y(aL,"color"),aM,this.bgRadius,aI,this.bgOutlineThickness,aH,this.padding,aN&&aN.original);if(aJ){aP.SetImage(aJ);aw(aJ,aO[0],aP,this)}else{aP.Init()}return aP}};Q.UpdateTag=function(aH,i){var aK=this.textColour||Y(i,"color"),j=this.textFont||o(Y(i,"font-family")),aJ=this.bgColour=="tag"?Y(i,"background-color"):this.bgColour,aI=this.bgOutline=="tag"?Y(i,"color"):this.bgOutline;aH.a=i;aH.title=i.title;if(aH.colour!=aK||aH.textFont!=j||aH.bgColour!=aJ||aH.bgOutline!=aI){aH.SetFont(j,aK,aJ,aI)}};Q.Weight=function(aN){var aJ=aN.length,aL,aH,aO,aK=[],j,aI=this.weightFrom?this.weightFrom.split(/[, ]/):[null],aM=aI.length;for(aH=0;aH<aJ;++aH){aK[aH]=[];for(aO=0;aO<aM;++aO){aL=u(aN[aH].a,aI[aO],this.textHeight);if(!this.max_weight[aO]||aL>this.max_weight[aO]){this.max_weight[aO]=aL}if(!this.min_weight[aO]||aL<this.min_weight[aO]){this.min_weight[aO]=aL}aK[aH][aO]=aL}}for(aO=0;aO<aM;++aO){if(this.max_weight[aO]>this.min_weight[aO]){j=1}}if(j){for(aH=0;aH<aJ;++aH){aN[aH].SetWeight(aK[aH])}}};Q.Load=function(){var aR=this.GetTags(),aM=[],aP,aQ,aL,aI,aH,j,aJ,aO,aK=[],aN={sphere:q,vcylinder:am,hcylinder:au,vring:d,hring:n};if(aR.length){aK.length=aR.length;for(aO=0;aO<aR.length;++aO){aK[aO]=aO}this.shuffleTags&&an(aK);aI=100*this.radiusX;aH=100*this.radiusY;j=100*this.radiusZ;this.max_radius=s(aI,s(aH,j));for(aO=0;aO<aR.length;++aO){aQ=this.CreateTag(aR[aK[aO]]);if(aQ){aM.push(aQ)}}this.weight&&this.Weight(aM,true);if(this.shapeArgs){this.shapeArgs[0]=aM.length}else{aL=this.shape.toString().split(/[(),]/);aP=aL.shift();if(typeof window[aP]==="function"){this.shape=window[aP]}else{this.shape=aN[aP]||aN.sphere}this.shapeArgs=[aM.length,aI,aH,j].concat(aL)}aJ=this.shape.apply(this,this.shapeArgs);this.listLength=aM.length;for(aO=0;aO<aM.length;++aO){aM[aO].position=new ae(aJ[aO][0],aJ[aO][1],aJ[aO][2])}}if(this.noTagsMessage&&!aM.length){aO=(this.imageMode&&this.imageMode!="both"?this.imageMode+" ":"");aM=this.Message("No "+aO+"tags")}this.taglist=aM};Q.Update=function(){var aQ=this.GetTags(),aP=[],aK=this.taglist,aR,aO=[],aM=[],aI,aN,aH,aL,aJ;if(!this.shapeArgs){return this.Load()}if(aQ.length){aH=this.listLength=aQ.length;aN=aK.length;for(aL=0;aL<aN;++aL){aP.push(aK[aL]);aM.push(aL)}for(aL=0;aL<aH;++aL){for(aJ=0,aR=0;aJ<aN;++aJ){if(aK[aJ].EqualTo(aQ[aL])){this.UpdateTag(aP[aJ],aQ[aL]);aR=aM[aJ]=-1}}if(!aR){aO.push(aL)}}for(aL=0,aJ=0;aL<aN;++aL){if(aM[aJ]==-1){aM.splice(aJ,1)}else{++aJ}}if(aM.length){an(aM);while(aM.length&&aO.length){aL=aM.shift();aJ=aO.shift();aP[aL]=this.CreateTag(aQ[aJ])}aM.sort(function(j,i){return j-i});while(aM.length){aP.splice(aM.pop(),1)}}aJ=aP.length/(aO.length+1);aL=0;while(aO.length){aP.splice(ap(++aL*aJ),0,this.CreateTag(aQ[aO.shift()]))}this.shapeArgs[0]=aH=aP.length;aI=this.shape.apply(this,this.shapeArgs);for(aL=0;aL<aH;++aL){aP[aL].position=new ae(aI[aL][0],aI[aL][1],aI[aL][2])}this.weight&&this.Weight(aP)}this.taglist=aP};Q.SetShadow=function(i){i.shadowBlur=this.shadowBlur;i.shadowOffsetX=this.shadowOffset[0];i.shadowOffsetY=this.shadowOffset[1]};Q.Draw=function(aR){if(this.paused){return}var aL=this.canvas,aJ=aL.width,aQ=aL.height,aT=0,aI=(aR-this.time)*y.interval/1000,aP=aJ/2+this.offsetX,aO=aQ/2+this.offsetY,aX=this.ctxt,aN,aY,aV,aH=-1,aK=this.taglist,aU=aK.length,j=this.frontSelect,aS=(this.centreFunc==aA),aM;this.time=aR;if(this.frozen&&this.drawn){return this.Animate(aJ,aQ,aI)}aM=this.AnimateFixed();aX.setTransform(1,0,0,1,0,0);for(aV=0;aV<aU;++aV){aK[aV].Calc(this.transform,this.fixedAlpha)}aK=A(aK,function(aZ,i){return i.z-aZ.z});if(aM&&this.fixedAnim.active){aN=this.fixedAnim.tag.UpdateActive(aX,aP,aO)}else{this.active=null;for(aV=0;aV<aU;++aV){aY=this.mx>=0&&this.my>=0&&this.taglist[aV].CheckActive(aX,aP,aO);if(aY&&aY.sc>aT&&(!j||aY.z<=0)){aN=aY;aH=aV;aN.tag=this.taglist[aV];aT=aY.sc}}this.active=aN}this.txtOpt||(this.shadow&&this.SetShadow(aX));aX.clearRect(0,0,aJ,aQ);for(aV=0;aV<aU;++aV){if(!aS&&aK[aV].z<=0){try{this.centreFunc(aX,aJ,aQ,aP,aO)}catch(aW){alert(aW);this.centreFunc=aA}aS=true}if(!(aN&&aN.tag==aK[aV]&&aN.PreDraw(aX,aK[aV],aP,aO))){aK[aV].Draw(aX,aP,aO)}aN&&aN.tag==aK[aV]&&aN.PostDraw(aX)}if(this.freezeActive&&aN){this.Freeze()}else{this.UnFreeze();this.drawn=(aU==this.listLength)}if(this.fixedCallback){this.fixedCallback(this,this.fixedCallbackTag);this.fixedCallback=null}aM||this.Animate(aJ,aQ,aI);aN&&aN.LastDraw(aX);aL.style.cursor=aN?this.activeCursor:"";this.Tooltip(aN,this.taglist[aH])};Q.TooltipNone=function(){};Q.TooltipNative=function(j,i){if(j){this.canvas.title=i&&i.title?i.title:""}else{this.canvas.title=this.ctitle}};Q.SetTTDiv=function(aI,j){var i=this,aH=i.ttdiv.style;if(aI!=i.ttdiv.innerHTML){aH.display="none"}i.ttdiv.innerHTML=aI;j&&(j.title=i.ttdiv.innerHTML);if(aH.display=="none"&&!i.tttimer){i.tttimer=setTimeout(function(){var aJ=ab(i.canvas.id);aH.display="block";aH.left=aJ.x+i.mx+"px";aH.top=aJ.y+i.my+24+"px";i.tttimer=null},i.tooltipDelay)}};Q.TooltipDiv=function(j,i){if(j&&i&&i.title){this.SetTTDiv(i.title,i)}else{if(!j&&this.mx!=-1&&this.my!=-1&&this.ctitle.length){this.SetTTDiv(this.ctitle)}else{this.ttdiv.style.display="none"}}};Q.Transform=function(aK,i,aM){if(i||aM){var j=ah(i),aL=w(i),aN=ah(aM),aJ=w(aM),aH=new R([aJ,0,aN,0,1,0,-aN,0,aJ]),aI=new R([1,0,0,0,aL,-j,0,j,aL]);aK.transform=aK.transform.mul(aH.mul(aI))}};Q.AnimateFixed=function(){var aH,j,aJ,i,aI;if(this.fadeIn){j=G()-this.startTime;if(j>=this.fadeIn){this.fadeIn=0;this.fixedAlpha=1}else{this.fixedAlpha=j/this.fadeIn}}if(this.fixedAnim){if(!this.fixedAnim.transform){this.fixedAnim.transform=this.transform}aH=this.fixedAnim,j=G()-aH.t0,aJ=aH.angle,i,aI=this.animTiming(aH.t,j);this.transform=aH.transform;if(j>=aH.t){this.fixedCallbackTag=aH.tag;this.fixedCallback=aH.cb;this.fixedAnim=this.yaw=this.pitch=0}else{aJ*=aI}i=R.Rotation(aJ,aH.axis);this.transform=this.transform.mul(i);return(this.fixedAnim!=0)}return false};Q.AnimatePosition=function(aH,aK,aI){var j=this,i=j.mx,aM=j.my,aJ,aL;if(!j.frozen&&i>=0&&aM>=0&&i<aH&&aM<aK){aJ=j.maxSpeed,aL=j.reverse?-1:1;j.lx||(j.yaw=((i*2*aJ/aH)-aJ)*aL*aI);j.ly||(j.pitch=((aM*2*aJ/aK)-aJ)*-aL*aI);j.initial=null}else{if(!j.initial){if(j.frozen&&!j.freezeDecel){j.yaw=j.pitch=0}else{j.Decel(j)}}}this.Transform(j,j.pitch,j.yaw)};Q.AnimateDrag=function(j,aJ,aI){var i=this,aH=100*aI*i.maxSpeed/i.max_radius/i.zoom;if(i.dx||i.dy){i.lx||(i.yaw=i.dx*aH/i.stretchX);i.ly||(i.pitch=i.dy*-aH/i.stretchY);i.dx=i.dy=0;i.initial=null}else{if(!i.initial){i.Decel(i)}}this.Transform(i,i.pitch,i.yaw)};Q.Freeze=function(){if(!this.frozen){this.preFreeze=[this.yaw,this.pitch];this.frozen=1;this.drawn=0}};Q.UnFreeze=function(){if(this.frozen){this.yaw=this.preFreeze[0];this.pitch=this.preFreeze[1];this.frozen=0}};Q.Decel=function(i){var aH=i.minSpeed,aI=L(i.yaw),j=L(i.pitch);if(!i.lx&&aI>aH){i.yaw=aI>i.z0?i.yaw*i.decel:0}if(!i.ly&&j>aH){i.pitch=j>i.z0?i.pitch*i.decel:0}};Q.Zoom=function(i){this.z2=this.z1*(1/i);this.drawn=0};Q.Clicked=function(aH){var i=this.active;try{if(i&&i.tag){if(this.clickToFront===false||this.clickToFront===null){i.tag.Clicked(aH)}else{this.TagToFront(i.tag,this.clickToFront,function(){i.tag.Clicked(aH)},true)}}}catch(j){}};Q.Wheel=function(j){var aH=this.zoom+this.zoomStep*(j?1:-1);this.zoom=aD(this.zoomMax,s(this.zoomMin,aH));this.Zoom(this.zoom)};Q.BeginDrag=function(i){this.down=S(i,this.canvas);i.cancelBubble=true;i.returnValue=false;i.preventDefault&&i.preventDefault()};Q.Drag=function(aJ,aI){if(this.dragControl&&this.down){var aH=this.dragThreshold*this.dragThreshold,j=aI.x-this.down.x,i=aI.y-this.down.y;if(this.dragging||j*j+i*i>aH){this.dx=j;this.dy=i;this.dragging=1;this.down=aI}}return this.dragging};Q.EndDrag=function(){var i=this.dragging;this.dragging=this.down=null;return i};function D(aH){var j=aH.targetTouches[0],i=aH.targetTouches[1];return F(at(i.pageX-j.pageX,2)+at(i.pageY-j.pageY,2))}Q.BeginPinch=function(i){this.pinched=[D(i),this.zoom];i.preventDefault&&i.preventDefault()};Q.Pinch=function(j){var aI,aH,i=this.pinched;if(!i){return}aH=D(j);aI=i[1]*aH/i[0];this.zoom=aD(this.zoomMax,s(this.zoomMin,aI));this.Zoom(this.zoom)};Q.EndPinch=function(i){this.pinched=null};Q.Pause=function(){this.paused=true};Q.Resume=function(){this.paused=false};Q.SetSpeed=function(j){this.initial=j;this.yaw=j[0]*this.maxSpeed;this.pitch=j[1]*this.maxSpeed};Q.FindTag=function(aH){if(!ai(aH)){return null}ai(aH.index)&&(aH=aH.index);if(!I(aH)){return this.taglist[aH]}var aI,aJ,j;if(ai(aH.id)){aI="id",aJ=aH.id}else{if(ai(aH.text)){aI="innerText",aJ=aH.text}}for(j=0;j<this.taglist.length;++j){if(this.taglist[j].a[aI]==aJ){return this.taglist[j]}}};Q.RotateTag=function(aP,aI,aO,i,aM,aH){var aN=aP.Calc(this.transform,1),aK=new ae(aN.x,aN.y,aN.z),aJ=aj(aO,aI),j=aK.angle(aJ),aL=aK.cross(aJ).unit();if(j==0){this.fixedCallbackTag=aP;this.fixedCallback=aM}else{this.fixedAnim={angle:-j,axis:aL,t:i,t0:G(),cb:aM,tag:aP,active:aH}}};Q.TagToFront=function(i,aH,aI,j){this.RotateTag(i,0,0,aH,aI,j)};y.Start=function(aH,i,j){y.Delete(aH);y.tc[aH]=new y(aH,i,j)};function ay(i,j){y.tc[j]&&y.tc[j][i]()}y.Linear=function(i,j){return j/i};y.Smooth=function(i,j){return 0.5-w(j*Math.PI/i)/2};y.Pause=function(i){ay("Pause",i)};y.Resume=function(i){ay("Resume",i)};y.Reload=function(i){ay("Load",i)};y.Update=function(i){ay("Update",i)};y.SetSpeed=function(j,i){if(I(i)&&y.tc[j]&&!isNaN(i[0])&&!isNaN(i[1])){y.tc[j].SetSpeed(i);return true}return false};y.TagToFront=function(j,i){if(!I(i)){return false}i.lat=i.lng=0;return y.RotateTag(j,i)};y.RotateTag=function(aH,i){if(I(i)&&y.tc[aH]){if(isNaN(i.time)){i.time=500}var j=y.tc[aH].FindTag(i);if(j){y.tc[aH].RotateTag(j,i.lat,i.lng,i.time,i.callback,i.active);return true}}return false};y.Delete=function(aI){var j,aH;if(b[aI]){aH=C.getElementById(aI);if(aH){for(j=0;j<b[aI].length;++j){a(b[aI][j][0],b[aI][j][1],aH)}}}delete b[aI];delete y.tc[aI]};y.NextFrameRAF=function(){requestAnimationFrame(E)};y.NextFrameTimeout=function(i){setTimeout(O,i)};y.tc={};y.options={z1:20000,z2:20000,z0:0.0002,freezeActive:false,freezeDecel:false,activeCursor:"pointer",pulsateTo:1,pulsateTime:3,reverse:false,depth:0.5,maxSpeed:0.05,minSpeed:0,decel:0.95,interval:20,minBrightness:0.1,maxBrightness:1,outlineColour:"#ffff99",outlineThickness:2,outlineOffset:5,outlineMethod:"outline",outlineRadius:0,textColour:"#ff99ff",textHeight:15,textFont:"Helvetica, Arial, sans-serif",shadow:"#000",shadowBlur:0,shadowOffset:[0,0],initial:null,hideTags:true,zoom:1,weight:false,weightMode:"size",weightFrom:null,weightSize:1,weightSizeMin:null,weightSizeMax:null,weightGradient:{0:"#f00",0.33:"#ff0",0.66:"#0f0",1:"#00f"},txtOpt:true,txtScale:2,frontSelect:false,wheelZoom:true,zoomMin:0.3,zoomMax:3,zoomStep:0.05,shape:"sphere",lock:null,tooltip:null,tooltipDelay:300,tooltipClass:"tctooltip",radiusX:1,radiusY:1,radiusZ:1,stretchX:1,stretchY:1,offsetX:0,offsetY:0,shuffleTags:false,noSelect:false,noMouse:false,imageScale:1,paused:false,dragControl:false,dragThreshold:4,centreFunc:aA,splitWidth:0,animTiming:"Smooth",clickToFront:false,fadeIn:0,padding:0,bgColour:null,bgRadius:0,bgOutline:null,bgOutlineThickness:0,outlineIncrease:4,textAlign:"centre",textVAlign:"middle",imageMode:null,imagePosition:null,imagePadding:2,imageAlign:"centre",imageVAlign:"middle",noTagsMessage:true,centreImage:null,pinchZoom:false,repeatTags:0,minTags:0,imageRadius:0,scrollPause:false,outlineDash:0,outlineDashSpace:0,outlineDashSpeed:1};for(M in y.options){y[M]=y.options[M]}window.TagCanvas=y;ad("load",function(){y.loaded=1},window)})();
-
-
-var options = {
-  textColour: '#2c3e50',
-  textHeight: 20,
-  depth: 1
- };
-
-window.onload = function() {
-  try {
-    TagCanvas.Start('skillCanvas', '', options);
-    console.log("Start skill animation");
-  } catch(e) {
-    // something went wrong, hide the canvas container
-    console.log("Hide canvas")
-    document.getElementById('skillCanvasContainer').style.display = 'none';
-  }
-};
-
-  </script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-
+<html>
+	<head>
+		<title>LMS</title>
+	</head>
+	<body>
+		Savol va javoblar
+
+1.Kerberos protokolining asosini ....... protokiolining uchinchi ishonilgan taraf bilan autentifikasiyalash va kalitlarni taqsimlash protokoli tashkil etadi.?
+Nidxem-Shreder
+Shreder-Shamir
+Nidxem-Uiston
+Nidxem-Kerber
+2.Kriptografik protokollar tomonlarning ishtirokiga ko‘ra qanday tuzilgan bo‘ladi?
+2 tomonlama, 3 tomonlama
+faqat 2 tomonlama
+faqat 3 tomonlama
+Ko‘p tomonlama
+3.Quyida keltirilgan protokollarning qaysilari axborot xavfsizligi protokollari hisoblanadi?
+HTTPS, SSL, SSH, L2TP, FTP
+HTTP, Telnet, IPsec, TLS
+HTTPS, SSL, IPsec, Kerberos
+HTTP, HTTPS, SSL, IPsec
+4.Sub’yektni taqdim etilgan identifikatori bo‘yicha tizimga kirishda uning haqiqiyligini tekshirish jarayoni bu...
+Autentifikasiya  
+Ma’murlash  
+Avtorizasiya
+Identifikasiya
+
+5.Kriptografik protokollar yuboriladigan xabarlar soniga ko'ra qanday sinfga bo'linadi?
+interaktiv, nointeraktiv
+interaktiv, aktiv
+aktiv, nointeraktiv
+aktiv, noaktiv
+6.Kriptofragik protokollarning belgilangan maqsadiga ko'ra necha sinfga bo'linadi?
+5 ta
+4 ta
+3 ta
+2 ta
+7.Shamir protokoli qanday tizimga asoslangan protokol hisoblanadi?
+simmetrik kriptotizimga
+asimmetrik kriptotizimga
+ochiq kalitli kriptotizimga
+simmetrik hamda asimmetrik kriptotizimlarga
+8.Ochiq kalitlar infratuzilmasi ochiq kalitlarning nimalarini ta'minlaydi?
+kalitni identifikatsiyalash va uning taqsimotini ta'minlaydi
+kalitni identifikatsiyalash va saqlashni ta'minlaydi
+kalitni saqlash va uning taqsimotini ta'minlaydi
+kalitni generatsiyalash va saqlashni ta'minlaydi
+9.Autentifikasiyalash vositalari to‘g’ri ko‘rsatilgan javobni toping
+Parollar, tokenlar, biometrik, kriptografik
+Identifikator, parollar, biometrik, kalit.
+Avtorizasiya, kalit, biometrik, parollar
+Parollar, kalit, tokenlar, biometrik, kriptografik
+10.Protokolga to‘g‘ri ta’rif berilgan qatorni toping
+Ikki yoki undan ortiq tomonlar bajaradigan, biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi protokol hisoblanadi.
+biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi protokol hisoblanadi.
+Algoritmlar ketma-ketligi protokol hisoblanadi.
+Ikki yoki undan ortiq tomonlar bajaradigan yoki qurima va foydalanuvchini o‘rtasidagi o‘zaro autentifikasiya jarayoni protokol hisoblanadi.
+
+11.Kriptografik protokollarda ishtirokchilar tomonidan qanday ammallar bajarilishi mumkin?
+Xabar yuborishi, xabarni qabul qilishi, ichki amallar bajarishi mumkin
+Xabar yuborishi, xabarni qabul qilishi
+Xabar yuborishi, ichki amallar bajarishi mumkin
+Ixtiyoriy amallar bajarishi
+
+
+
+
+
+
+
+
+12.Yuboriladigan xabar turiga qarab kriptografik protokollar qanday sinflarga bo‘linadi
+Interaktiv va nointeraktiv
+Faol va faol bo‘lmagan 
+Aniq va noaniq
+Obyektiv va subyektiv
+13.Kriptografik protokollar belgilangan maqsadiga ko‘ra qanday turlarga bo‘linadi 
+Identifikasiyalash, Kalitlarni taqsimlash, ERI va xabar yaxlitligini ta’minlovchi protokollar 
+TCP/IP va UDP protokollari
+Identifikasiyalash va autentifikasiyalash protokollari
+Identifikasiyalash, Kalitlarni taqsimlash, ERI protokollari
+14.IFF protokolinining kengaytmasi qanday
+Identify friend or foe
+Identify friend or false
+Indipendent friend or false
+Indipendent friend or foe
+15.IFF protokoli nima maqsadda ishlatilgan
+Shifrlash kaliti yordamida radar orqali samalyotlarni autentifikatsiyadan o‘tkazish uchun 
+Tarmoqadan kelayotgan fayllarni tekshirish uchun
+Xujumlarni aniqlash uchun
+Tarmoqdan bo‘layotgan xujumlarning oldini olish uchun
+16.Sessiya kaliti nima?
+Simmetrik kalit bo‘lib, sessiyada uzatilayotgan ma’lumotning maxfiyligi va butunligini ta’minlaydi
+Ochiq kalit bo‘lib, sessiyada uzatilayotgan ma’lumotning maxfiyligi va butunligini ta’minlaydi
+Ochiq kalit bo‘lib, sessiyada uzatilayotgan ma’lumotning maxfiyligi va butunligini ta’minlaydi
+Ochiq kalit bo‘lib, sessiyada uzatilayotgan ma’lumotning maxfiyligi va butunligini ta’minlaydi
+17.Parolni “salt” (tuz) kattaligidan foydalanib xeshlashdan (h(password, salt)) asosiy maqsad nima?
+Buzg‘unchiga ortiqcha hisoblashni talab etuvchi murakkablikni yaratish
+Buzg‘unchi topa olmasligi uchun yangi nomalum kiritish
+Xesh qiymatni tasodifiylik darajasini oshirish
+Xesh qiymatni qaytmaslik talabini oshirish
+18.Konfidensiallikni ta’minlash bu - ?
+ruxsatsiz o‘qishdan himoyalash.
+ruxsatsiz yozishdan himoyalash.
+ruxsatsiz bajarishdan himoyalash.
+ruxsat etilgan amallarni bajarish.
+19.Foydalanuvchanlikni ta’minlash bu - ?
+ruxsatsiz bajarishdan himoyalash.
+ruxsatsiz yozishdan himoyalash.
+ruxsatsiz o‘qishdan himoyalash.
+ruxsat etilgan amallarni bajarish.
+20.Yaxlitlikni ta’minlash bu - ?
+ruxsatsiz yozishdan himoyalash.
+ruxsatsiz o‘qishdan himoyalash.
+ruxsatsiz bajarishdan himoyalash.
+ruxsat etilgan amallarni bajarish.
+21.Kriptologiya so‘ziga berilgan to‘g‘ri tavsifni toping?
+Maxfiy shifrlarni yaratish va buzish fani va sanati.
+Maxfiy shifrlarni yaratish fani va sanati.
+Maxfiy shifrlarni buzish fani va sanati.
+Axborotni himoyalash fani va sanati.
+22..... kriptotizimni shifrlash va deshifrlash uchun sozlashda foydalaniladi.
+Kriptografik kalit
+Ochiq matn
+Alifbo
+Algoritm
+23.Kriptografiya so‘ziga berilgan to‘g‘ri tavsifni toping?
+Maxfiy shifrlarni yaratish fani va sanati.
+Maxfiy shifrlarni yaratish va buzish fani va sanati.
+Maxfiy shifrlarni buzish fani va sanati.
+Axborotni himoyalash fani va sanati.
+24.Kriptotahlil so‘ziga berilgan to‘g‘ri tavsifni toping?
+Maxfiy shifrlarni buzish fani va sanati.
+Maxfiy shifrlarni yaratish fani va sanati.
+Maxfiy shifrlarni yaratish va buzish fani va sanati.
+Axborotni himoyalash fani va sanati.
+25.Simmetrik shifrlash algoritmlarinigasosiy vazifasi nimalardan iborat?
+Tomonlarni autentifikatsiyalash va sessiya kalitini almashish
+Tomonlarni autentifikatsiyalash
+sessiya kalitini almashish
+Ma’lumotlarni autentifikatsiyalash 
+26.Gibrid shifrlash usuli deb nimaga aytiladi?
+Simmetrik va asimmetrik shifrlash algoritmini birgalika ishlatadigan usul
+Bunday shifrlash usuli yo‘q
+Kvant kriptografiyasida nazarda tutilgan usul
+Gamomorfik shifrlash usuli
+27.Gibrid shifrlash usulining mohiyati qanday?
+Ma’lumotni simmetrik shifrlash algoritmida, kalitni asimmetrik shifrlash algortmida shifrlab uzatish
+Ma’lumotni simmetrik shifrlash algoritmida shifrlab uzatish
+Kalitni asimmetrik shifrlash algortmida shifrlab uzatish
+To‘g‘ri javob yo‘q 
+28.Gibrid shifrlash usulining kamchiligi nimada?
+Ochiq kalitning kimga tegishli ekanligining no‘malumligi
+Bu shifrlash usuli kamchiliklardan holi
+Kalitni oldindan almashish muammosi mavjud
+Kalitga qaratilga hujum usuliga bardoshsiz
+29.PKI(Publik key infrastructure) tizimlarining vazifasi nima?
+Ochiq kalitning kimga tegishli ekanligini belgilash
+Simmetrik kalitlarni xavfsiz uzatish 
+Kriptografik protokollarni tahlillash
+Kriptografik protokollarni xavfsizlik talablariga tekshirish
+30.PPTP protokoling kengaytmasi to‘g‘ri keltirilgan javobni toping
+Point-to-Point Tunneling Protocol
+Point-to-Point Transfer Protocol
+Point-to-Point Protocol
+To‘g‘ri javob keltirilmagan
+31.PPTP protokoling vazifasi to‘g‘ri keltirilgan javobni toping
+TCP/IP ga asoslangan holda VPN yaratish orqali xavfsiz ma’lumot almashishni ta’minlaydi
+PPP protokoli orqali ma’lumotlarni uzatishni amalga oshiradi
+Ikki tomonlama autentifikatsiyalashni amalga oshirish
+Point-to-Point Transfer Protocol ni amalga oshirish
+32.Tunellash nima?
+Tarmoq paetlarini boshqa tarmoq marshrutizatorlari boshqara olmaydigan qilib uzatish
+Ma’lumotlarni IP adresslarsiz uzatish
+PPP protokoli orqali ma’lumotlarni uzatishni amalga oshiradi
+Tarmoqda ma’lumotlarning mavjudligini yashirib uzatish usullari
+33.GRE protokolining kengaytmasini ko‘rsating
+Generic Routing Encapsulation
+Generic Routing Encryprion
+General Routing Encryprion
+GenericRouter Encryprion
+34.SSH protokolining kengaytmasi to‘g‘ri ko‘rsatilgan javobni toping
+Secure Shell
+Secret Shell
+Secure shared
+Secret header
+35.Tunellash nima?
+Tarmoq paetlarini boshqa tarmoq marshrutizatorlari boshqara olmaydigan qilib uzatish
+Ma’lumotlarni IP adresslarsiz uzatish
+PPP protokoli orqali ma’lumotlarni uzatishni amalga oshiradi
+Tarmoqda ma’lumotlarning mavjudligini yashirib uzatish usullari
+36.GRE protokolining kengaytmasini ko‘rsating
+Generic Routing Encapsulation
+Generic Routing Encryprion
+General Routing Encryprion
+GenericRouter Encryprion
+37.KDS bu -?
+key distribution center
+key desktop center
+kerberos distribution center
+kerberos development center
+38.Protokol deb nimaga aytiladi?
+ikki yoki undan ortiq tomonlar bajaradigan, biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi
+bir yoki undan ortiq tomonlar bajaradigan, biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi
+bir kishi tomonidan bajaradigan, biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi
+biror-bir masalani yechish uchun loyihalashtirilgan harakatlar ketma-ketligi
+39.Ikki yoki undan ortiq tomonlar bajaradigan harakatlar ketma-ketligi - bu
+protokol
+ketma-ketlik
+funksiya
+algoritm
+40.Protokolga xos xususiyatni belgilang?
+har bir harakat navbatma-navbat bajariladi
+har bir harakat o'z holicha bajariladi
+har bir harakat navbatma-navbat bajarilmaydi
+har bir harakat bir biriga bo'gliq bo'lmagan holda bajariladi
+41.Protokolga xos xususiyatni belgilang?
+yakunda natijaga erishiladi
+yakunda natijaga erishilmaydi
+har bir harakat o'z holicha bajariladi
+har bir harakat navbatma-navbat bajarilmaydi
+42.Protokolga xos bo'lmagan xususiyatni belgilang?
+yakunda natijaga erishilmaydi
+yakunda natijaga erishiladi
+har bir harakat navbatma-navbat bajariladi
+amallar boshidan ohirigacha tartibga ega
+43.Protokol bajarilishi uchun necha ishtirokchi bo'lishi yetarli hisoblanadi?
+kamida ikkita
+kamida bitta
+ishtirokchilarning ishtiroki ko'zda tutulmaydi
+bitta ishtirokchining ishtiroki yetarli hisoblanadi
+44.Kriptografik protokolning xavfsizlik xossasi qanday qism sinflarga bo'linadi?
+maxfiylik, yaxlitlik
+maxfiylik, foydalanuvchanlik
+yaxlitlik, foydalanuvchanlik
+foydalanuvchanlik, butunlik
+45.Kriptografik protokollar ishtirokchilar soniga ko'ra necha sinfga bo'linadi?
+3 ta
+2 ta
+4 ta
+yagona sinfga ega
+46.Kriptografik protokollar ishtirokchilar soniga ko'ra qanday sinfga bo'linadi?
+ikki tomonlama, uch tomonlama, ko'p tomonlama
+ikki tomonlama, uch tomonlama
+ikki tomonlama, ko'p tomonlama
+uch tomonlama, ko'p tomonlama
+47.Kriptografik protokollar yuboriladigan xabarlar soniga ko'ra necha sinfga bo'linadi?
+2 ta
+3 ta
+4 ta
+yagona sinfga ega
+
+48.Kriptografik protokollar yuboriladigan xabarlar soniga ko'ra qanday sinfga bo'linadi?
+interaktiv, nointeraktiv
+interaktiv, aktiv
+aktiv, nointeraktiv
+aktiv, noaktiv
+49.Kriptofragik protokollarning belgilangan maqsadiga ko'ra necha sinfga bo'linadi?
+5 ta
+4 ta
+3 ta
+2 ta
+50.Shamir protokoli qanday tizimga asoslangan protokol hisoblanadi?
+simmetrik kriptotizimga
+asimmetrik kriptotizimga
+ochiq kalitli kriptotizimga
+simmetrik hamda asimmetrik kriptotizimlarga
+51.Ochiq kalitlar infratuzilmasi ochiq kalitlarning nimalarini ta'minlaydi?
+kalitni identifikatsiyalash va uning taqsimotini ta'minlaydi
+kalitni identifikatsiyalash va saqlashni ta'minlaydi
+kalitni saqlash va uning taqsimotini ta'minlaydi
+kalitni generatsiyalash va saqlashni ta'minlaydi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+52.PPP protokolining kengaytmasi qanday?
+point to point protocol
+password point protocol
+point to password protocol
+password protocol of point
+53.PAP protokolining kengaytmasi qanday?
+password authentication protocol
+protocol of password authentication
+potin of authentication protocol
+protocol of password to point
+54.CHAP protokolining kengaytmasi qanday?
+challenge-handshake authentication protocol
+challenge-header authentication protocol
+code-handshake authentication protocol
+code-header authentication protocol
+55.EAP protokoli kengaytmasi qanday?
+extensible authentication protocol
+extensible authorization protocol
+extensible audit protocol
+extensible alllocable protocol
+56.PPTP protokolining kengaytmasi qanday?
+point to point tunneling protocol
+password of point tunneling protocol
+point of password tunneling protocol
+protocol of point to tunneling point
+57.RADIUS protokolining kengaytmasi qanday?
+remote authentication dial-in user service
+remote authentication dial-up user service
+remote authentication dial-in update service
+remote authentication dial-up update service
+58.CHAP protokoli PAP protokolidagi qanday muammoni hal qilgan?
+takrorlash hujumini oldi olingan
+ushlab qolish hujumini oldi olingan
+o'zgartirish hujumini oldi olingan
+yo'q qilish hujumini oldi olingan
+59.SSH protokolida ma’lumot almashinish qaysi port orqali amalga oshiriladi?
+22
+443
+43
+21
+60.SSL protokolida ma’lumot almashinishda qaysi port amal qiladi?
+443
+22
+21
+43
+61.IFF protokoliga nisbatan qanday xujum amalga oshirilgan
+MIG-in-the-middle
+brute force
+language attack
+Xujum amalga oshirilmagan
+62.Jumlani to‘ldiring. Denial of service (DOS) hujumi axborotni .... xususiyatini buzushga qaratilgan.
+foydalanuvchanlik
+butunlik
+konfidensiallik
+ishonchlilik
+63.Agar simmetrik kalitning uzunligi 64 bit bo‘lsa, jami bo‘lishi mumkin bo‘lgan kalitlar soni nechta?
+264
+64!
+642
+263
+64.Kriptografik protokollarda nonce(number used once) nima maqsadda ishlatiladi
+Takrorlash xujumidan himoyalash uchun
+Bir martalik parollar uchun
+Kalit sifatida foydalanish uchun
+Sessiya kaliti sifatida foydalanish uchun
+65.FTP protokolida ma'lumotlar kanali uchun ajratilgan port qanday rejimda ishlaydi?
+aktiv va passiv
+aktiv va faol
+passiv va sust
+sust, o'rta va faol
+66.Quyidagi qaysi protokollar simmetrik shifrlash algoritmlaridan foydalanib kalit uzatish protokllari hisoblanadi?
+Shamir, Nidxem-Shreder, Wide-Mouth protokollari
+Otvey-Riis, N’yuman Stabbley, TCP/IP protokollari
+SKID, Yaholam, UDP protokollari
+MTI, Dass, Denning-Sacco, Woo-Lam protokollari
+67.Quyidagi qaysi protokollar asimmetrik shifrlash algoritmlaridan foydalanib kalit uzatish protokllari hisoblanadi?
+MTI, Dass, Denning-Sacco, Woo-Lam protokollari
+Shamir, Nidxem-Shreder, Wide-Mouth protokollari
+Otvey-Riis, N’yuman Stabbley, TCP/IP protokollari
+SKID, Yaholam, UDP protokollari
+68.MTI protokoling bardoshliligi nimaga asoslangan
+Chekli maydonda diskret logorifmlashga
+Faktorlashga
+Tub ko‘paytuvchilarga ajraishga
+Yuqori darajaga oshirishga
+69.Woo-Lam protokoli nechi tomonlama autentifikatsiyalashni nazarda tutadi?
+Ikki tomonlama
+Bir tomonlama
+Uch tomonlama
+Autentifikatsiyalashni nazarda tutmaydi
+70.PPP protokolining tarkibini qaysi protokolllar tashkil etadi?
+Link Control Protocol (LCP), Authentication protocol, Network control protocol (NCP)
+PAP, CHAP, UDP
+TCP/IP, CHAP, EAP
+Authentication protocol, Network control protocol (NCP), PAP
+71.PPP protokolida autentifikatsiyani qaysi protokollar amalga oshiradi
+PAP, CHAP,EAP
+PAP, CHAP, UDP
+TCP/IP, CHAP, EAP
+Authentication protocol, Network control protocol (NCP), PAP
+72.PPTP protokoli tunlleshni qaysi port orqali amalga oshiradi?
+1723
+1725
+22
+223
+73.Radius qaysi turdagi protokol hisoblanadi
+Mijoz/server
+Server
+Mijoz
+TCP/IP
+74.Radius protokoli OSI modelining qaysi sathida ishlaydi?
+Ilova
+Transport
+Tarmoq
+Amaliy
+75.PGP protokolidan nima maqsadda foydalaniladi?
+Elektron pochta xabarlari xavfsizligida
+Pochta yaratishda
+Fayllar xavfsizligini ta’minlashda
+To‘g‘ri javob yo‘q
+76.OpenPGP standarti qaysi tashkilot tamonidan ishlab chiqarilgan?
+IETF
+Microsoft
+TCP/IP
+IBM
+77.PPP protokolida autentifikatsiyani qaysi protokollar amalga oshiradi
+PAP, CHAP,EAP
+PAP, CHAP, UDP
+TCP/IP, CHAP, EAP
+Authentication protocol, Network control protocol (NCP), PAP
+78.PPTP protokoling kengaytmasi to‘g‘ri keltirilgan javobni toping
+Point-to-Point Tunneling Protocol
+Point-to-Point Transfer Protocol
+Point-to-Point Protocol
+To‘g‘ri javob keltirilmagan
+79.PPTP protokoling vazifasi to‘g‘ri keltirilgan javobni toping
+TCP/IP ga asoslangan holda VPN yaratish orqali xavfsiz ma’lumot almashishni ta’minlaydi
+PPP protokoli orqali ma’lumotlarni uzatishni amalga oshiradi
+Ikki tomonlama autentifikatsiyalashni amalga oshirish
+Point-to-Point Transfer Protocol ni amalga oshirish
+80.PPTP protokoli tunlleshni qaysi port orqali amalga oshiradi?
+1723
+1725
+22
+223
+81.Radius protokolining vazifasi to‘g‘ri ko‘rsatilgan javobni toping
+AAA(Authentication, Authorization, and Accounting)ni ta’minlaydi
+Foydalanuvchilarni o‘zaro outentifikatsiyalashni amalga oshiradi
+Inentification, Authentication, Authorization jarayonlarini amalga oshiradi
+Tarmoqdagi foydalanuvchilarni ro‘yxatga olish vazifasini bajaradi
+82.Radius qaysi turdagi protokol hisoblanadi
+Mijoz/server
+Server
+Mijoz
+TCP/IP
+83.Mijoz/server muhitida fayllar almashishni ta’minlovchi protokol qaysi?
+FTP
+TLS
+SSL
+TSP
+84.FTP serveri so‘rovlarini qaysi port orqali qabul qiladi?
+21
+22
+23
+48
+85.FTP protokolining muammolarini ko‘rsating
+qo‘pol kuch hujumi, PORT buyrug’ini o‘zgartirishga asoslangan hujum, paketlarni tutib olish va taxlil qilish
+qo‘pol kuch hujumi
+PORT buyrug’ini o‘zgartirishga asoslangan hujum,
+qo‘pol kuch hujumi
+86.Kerberos protokolini obrosizlantirishda nima muhim ahamiyatga ega?
+Ticket-granting ticket
+Sessiya kaliti
+Ticket-great ticket
+kalitlar almashishdagi muammolar
+87.Kerberos protokolida takrorlashdan himoyalash nimaga asoslanadi?
+vaqt belgisiga
+vaqt belgisida uzilishlar soniga
+kalitlar taqsimotiga
+foydalanilgan simmetrik shifrlash algoritmiga
+88.Kerberos protokolida vaqtning og‘ishi qancha?
+5 minut
+1 minut
+2 minut
+10 minut
+89.Kerberos protokolida sessiya kaliti kim tomonidan yaratiladi?
+TGT tomonidan
+foydalanuvchini ozi yaratadi
+ikki tomon kelishuvi asosida
+Sessiya kalitidan foydalanilmaydi
+90.SSH protokolining vazifasi nima?
+Xavfsiz tarmoq orqali maxfiy aloqani tashkil etish
+Tarmoqda ma’lumotlar almashinuvin ta’minlaydi
+FTP da ishlash imkon beradi
+Ochiq kalitlar bilan ishlashni ta’minlaydi
+91.SSH protokolining qanday variantlari mavjud?
+SSH-1 va SSH-2
+SSH-1 va FTP
+HTTP va FTP
+SSH-2 va HTTPS
+92.SSH protokoli qaysi pratakollarning o‘rnini bosish maqsadida ishlatiladi?
+Bekreley rsh, rexec, rlogin
+MD5, 3DES, Blowfish, AES, va Twofish
+3DES, Blowfish, AES, va Twofish
+AES, Twofish
+93.Secure File Transfer Protocol (SFTP) protokoli qaysi protakol asosida ishlab chiqilgan.
+SSH protokoli asosida
+FTP protokoli asosida
+HTTPS protokoli asosida
+HTTP protokoli asosida
+94.SSH protokoli yordamida autentifikatsiyalash jarayonida kalit uzunligi qanchi bit bo‘ladi
+1024-2048 bit
+128-256 bit
+256-512 bit
+56-128 bit
+95.SSL/TLS protokolida qaysi ochiq kalit infratuzilmasi standartidan foydalaniladi?
+X.509
+PKCS#7
+CSR
+PKI
+96.SSL/TLS protokoli qanday arxitekturaga asoslanib ishlaydi?
+klient - server
+server – server
+klient – klient
+klient - server – klient
+97.SSL protokolining SSLv3.0 versiyasi qachon yaratilgan?
+1996 yilda
+1993 yilda
+1995 yilda
+2000 yilda
+98.TLS protokolining 1.2 versiyasida qanday o'zgartirishlar kiritilgan?
+MD5-SHA-1 algoritmlari SHA-256 algoritmi bilan almashtirilgan;
+- Ushbu protokoldan boshlab shifrlash algoritmi sifatida AES shifrlash algoritmi qo'shilgan;
+- Autentifikatsiyalash shifrlash algoritmi sifatida Galois/Counter Mode (GCM) rejimiga asoslangan AES algoritmidan foydalana boshlangan.
+MD5-SHA128-1 algoritmlari SHA-256 algoritmi bilan almashtirilgan;
+- Ushbu protokoldan boshlab shifrlash algoritmi sifatida RSA shifrlash algoritmi qo'shilgan;
+- Autentifikatsiyalash shifrlash algoritmi sifatida Galois/Counter Mode (GCM) rejimiga asoslangan AES algoritmidan foydalana boshlangan.
+"- MD5-SHA-1 algoritmlari SHA-512 algoritmi bilan almashtirilgan;
+- Ushbu protokoldan boshlab shifrlash algoritmi sifatida DSA shifrlash algoritmi qo'shilgan;
+- Autentifikatsiyalash shifrlash algoritmi sifatida Galois/Counter Mode (GCM) rejimiga asoslangan DSA algoritmidan foydalana boshlangan.
+"- MD5-SHA-1 algoritmlari SHA-1024 algoritmi bilan almashtirilgan;
+- Ushbu protokoldan boshlab shifrlash algoritmi sifatida RSA shifrlash algoritmi qo'shilgan;
+- Autentifikatsiyalash shifrlash algoritmi sifatida Galois/Counter Mode (GCM) rejimiga asoslangan RSA algoritmidan foydalana boshlangan.
+99.TLS protokoli tarkibida foydalanilgan Alert protokolida necha xil ogohlantiruvchi signallar mavjud?
+2 xil: fatal va warning
+3 xil: fatal, error va warning
+1 xil: fatal
+4 xil: error, fatal, warning va difficult
+100.GSM protokoli qanday tizimlarda qo'llaniladi?
+mobil aloqa tizimlarida
+shifrlab ma'lumotni uzatish tizimlarida
+autentikatsiydan o'tkazish tizimlarida
+file almashish tizmlarida
+101.WEB protokoli qaysi tizmlarda ishlatiladiishlatish uchun mo'ljallangan?
+simsiz tarmoqlarda foydalanish uchun
+autentikatsiydan o'tkazish tizimlarida foydalanish uchun
+file almashish tizmlarida foydalansih uchun
+sessiyani o'rnatish uchun
+102.WPA protokolo qachon ishlab chiqilga?
+2004-yil
+1998-yil
+1972-yil
+2019-yil
+103.WPA protokoli qaysi kompaniya tomonidan taqdim etilgan?
+Wi-Fi Alliance kompaniyasi
+NASA komponiyasi
+UNICON.UZ korxonasi
+DXX tashkiloti
+104.WPA protokoli simsiz tarmoqda qanday vazifalarni bajarib beradi?
+Autentifikatsiyalsh, ma'lumot maxfiyligini ta'minlash, ma'lumotning butunligini ta'minlash
+Faqat butunliligini taminlash
+Faqat autentifikatsiylash
+Ma'lumotlarni almashish, autentifikatsiyalash, sessiya holatini ushlab turish
+105.WPA vaWPA2 protokollari tavsifi qaysi standartda keltirlgan?
+IEEE 802.11i
+ISO 2001
+ISO1901
+IEEE 1000
+106.Xavfsiz aloqa protokoli berilgan qatorni toping?
+SET
+SMTP
+HTTP
+POP
+107.Secure Electronic Transactions protokolida tranzaksiya jarayonida nechta ishtirokchi mavjud?
+3
+1
+6
+5
+108.SET protokoli qanday tizimlarda foylanlanish uchun mo'ljallangan?
+Elektron to'lov amaliyotlarini amalga oshirish tizimlarida
+Ma'lumotlarni shfrlash tizimlarida
+Autentifikatsiyalash tizimlarida
+File almashinish tizimlarida
+109.SET protokoli qachon va qaysi kompaniya tomonidan taqdim etilgan?
+1997-yil, Visa va MasterCard tomonidan
+1972-yil, Electron money tomonidan
+2004-yil, Markaziy bank tomonidan
+2009-yil, UNICON.UZ tomonidan
+110.Kerberos protokoli qanday maqsadda qo'llaniladi?
+Vaqt metkasi yordamida autentifikatsiyalash
+Vaqt metkasi yordamida shifrlash
+Tasodifiy son yordamida autentifikatsiyalash
+Sertifikatlar yordamida shifrlash
+111.Pochta protollari keltirilgan qatorni toping?
+POP, IMAP, SMTP, S/MIME
+SSL, SSH.
+TLS, TCP/IP
+PAP, CHAP, UDP
+112.Odatda POP3 protokoli TCP ning qaysi portidan foydalangan holda ma'lumotlarni almashadi?
+110
+23
+80
+8080
+113.Odatda IMAP protokoli TCP ning qaysi portidan foydalangan holda ma'lumotlarni almashadi?
+143
+23
+80
+8080
+114.IMAP protokoli qanday maqsadda qo'llaniladi?
+Pochta serveridan xabarlarni qabul qilishda foydalaniladi.
+Ikkita pochta serverlari orasida aloqani ta'minlaydi.
+Ma'lumotlarni shifrlashda foydalaniladi.
+Autentifikatsiyalashda
+115.WEP protokolida nechta turdagi autentifikatsiyadan foydalaniladi
+2 turdagi
+5 turdagi
+3 turdagi
+10 turdagi
+116.WEP protokolida qanday turdagi autentifikatsiyadan foydalaniladi
+Open System autentification, Shared Key autentificatin 
+hech qanday autentifikatsiyadan foydalanilmaydi
+ikki faktotrli utentifikatsiyadan
+bir faktorli utentifikatsiyadan
+117.WPA ptotokoli va WEP protokoli orasidagi farq nimadan iborat
+WEP protokolida ikkita uzunlikdagi kalitdan foydalanilsa WPA da esa har bir paket uchun alohida hosil qilingan kalitlardan foydalaniladi
+autentifikatsiya usullariga
+protokolning kriptobardoshligiga
+protokolning versiyasiga 
+118.Protokol ta'rifidagi "biror bir masalani yechish uchun loyihalashtirilgan" so'zining ma'nosi?
+protokol qandaydir natijaga olib borishi kerakligini anglatadi
+har bir harakat navbatma-navbat bajarilishini anglatadi
+har bir harakat boshidan to oxiriga qadar ketma-ket bajarilishini anglatadi 
+protokol bajarilishi uchun kamida ikki tomonning ishtirok etishi kerakligini anglatadi
+119.Protokol ta'rifidagi "harakatlar ketma-ketligi" so'zining ma'nosi?
+har bir harakat boshidan to oxiriga qadar ketma-ket bajarilishini anglatadi 
+protokol qandaydir natijaga olib borishi kerakligini anglatadi
+protokol bajarilishi uchun kamida ikki tomonning ishtirok etishi kerakligini anglatadi
+har bir harakat navbatma-navbat bajarilmasligini anglatadi
+120.Protokol ta'rifidagi "ikki yoki undan ortiq tomonlar bajaradigan" so'zining ma'nosi?
+protokol bajarilishi uchun kamida ikki tomonning ishtirok etishi kerakligini anglatadi
+protokol qandaydir natijaga olib borishi kerakligini anglatadi
+har bir harakat navbatma-navbat bajarilishini anglatadi
+har bir harakat boshidan to oxiriga qadar ketma-ket bajarilishini anglatadi 
+121.Vositachi deb kimlarga aytiladi?
+protokolni bajarilishini yakuniga yetkazishga ishonch bildirilgan manfaatdor bo'lmagan uchinchi tomonga aytiladi
+protokolni bajarilishini yakuniga yetkazishga ishonch bildirilmagan manfaatdor bo'lmagan uchinchi tomonga aytiladi
+protokolni bajarilishini yakuniga yetkazishga ishonch bildirilgan manfaatdor bo'lgan uchinchi tomonga aytiladi
+protokolni bajarilishini yakuniga yetkazishga ishonch bildirilmagan manfaatdor bo'lgan uchinchi tomonga aytiladi
+122.Vositachi yordamidagi protokollarda, vositachining "manfaatdor bo'lmasligi" nimani anglatadi?
+protokol bajarilishini natijasi hamda protokol ishtirokchisining hech biri u uchun ahamiyatga ega emasligini bildiradi
+protokolning barcha ishtirokchilari vositachining so'zlarini haqiqat deb qabul qilinishini bildiradi
+protokol bajarilishini natijasi hamda protokol ishtirokchisining hech biri u uchun ahamiyatga ega ekanligini bildiradi
+protokolning barcha ishtirokchilari vositachining so'zlarini haqiqat deb qabul qilinmasligini bildiradi
+123.Qaysi protokollarda vositachining ishtiroki shart emas?
+o'ziga yetarli protokollarda
+arbitrli protokollarda
+vositachi yordamidagi protokollarda
+kirptografik protokollarda
+124.Kriptografik protokollar qanday muammolarni hal qiladi?
+maxfiylik, haqiyqiylikni tekshirish, yaxlitlik
+maxfiylik, haqiyqiylikni tekshirish, foydalanuvchanlik
+maxfiylik, foydalanuvchanlik, yaxlitlik
+foydalanuvchanlik, haqiyqiylikni tekshirish, yaxlitlik
+125.Kriptografik protokollardagi ishtirokchilar necha sinfga bo'linadi?
+3 ta
+2 ta
+barcha ishtirokchilar bir sinfga mansub bo'ladi
+protokolda ishtirokchilar ishtirok etmaydi
+126.Kriptografik protokollardagi ishtirokchilar qanday sinfga bo'linadi?
+odatdagi ishtirokchilar, ishonchli vositachilar, buzg'unchilar
+ishonchli vositachilar, buzg'unchilar
+odatdagi ishtirokchilar, buzg'unchilar
+odatdagi ishtirokchilar, ishonchli vositachilar, buzg'unchilar, arbitrlar
+127.Buzg'unchilar necha sinfga bo'linadi?
+2 ta
+3 ta
+barchasi bir sinfga mansub bo'lishadi
+4 ta
+128.Buzg'unchilar qanday sinfga bo'linadi?
+passiv va aktiv
+passiv va tug'in
+aktiv va tug'un
+turg'un va faol
+129.Kriptografik protokollar necha xossalarga bo'linadi?
+7 ta
+3 ta
+4 ta
+2 ta
+130.Kriptografik protokollar qanday xossalarga bo'linadi?
+aniqlik, xavfsizlik, turg'unlik, samaradorlik, adaptatsiya, hujjatlashtirilganlik, mobillik va moslanuvchanlik
+aniqlik, xavfsizlik, maxfiylik, samaradorlik, adaptatsiya, hujjatlashtirilganlik, mobillik va moslanuvchanlik
+aniqlik, xavfsizlik, yaxlitlik, samaradorlik, adaptatsiya, hujjatlashtirilganlik, mobillik va moslanuvchanlik
+aniqlik, xavfsizlik, foydalanuvchanlik, samaradorlik, adaptatsiya, hujjatlashtirilganlik, mobillik va moslanuvchanlik
+131.Kriptografik protokolning xavfsizlik xossasi necha qism sinflarga bo'linadi?
+2 ta
+3 ta
+4 ta
+yagona sinfga ega
+132.Kriptografik protokollarning xavfsizlik xossasidagi yaxlitlik nimani anglatadi?
+qonuniy foydalanuvchilarning almashinadigan xabarlarini buzg'unchi tomonidan o'zgartirish harakatlarini aniqlanishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+protokolning ishlash jarayonida xotira va vaqt resurslaridan samarali foydalanishni anglatadi
+133.Kriptografik protokollarning xavfsizlik xossasidagi maxfiylik nimani anglatadi?
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+qonuniy foydalanuvchilarning almashinadigan xabarlarini buzg'unchi tomonidan o'zgartirish harakatlarini aniqlanishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+134.Kriptografik protokollarning turg'unlik xossasi nimani anglatadi?
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+qonuniy foydalanuvchilarning almashinadigan xabarlarini buzg'unchi tomonidan o'zgartirish harakatlarini aniqlanishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+135.Kriptografik protokollarning samaradorlik xossasi nimani anglatadi?
+protokolning ishlashi jarayonida xotira va vaqt resurslaridan samarali foydalanishni anglatadi
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+qonuniy foydalanuvchilarning almashinadigan xabarlarini buzg'unchi tomonidan o'zgartirish harakatlarini aniqlanishini anglatadi
+136.Kriptografik protokollarning adaptatsiya xossasi nimani anglatadi?
+protokol, muhitning ozgina o'zgarishiga moslashuvchanligini anglatadi
+protokolning ishlashi jarayonida xotira va vaqt resurslaridan samarali foydalanishni anglatadi
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+ma'lumot almashinish jarayonida axborotning mualliflashtirilmagan tarzda chiqib ketishining oldi olinishini anglatadi
+137.Kriptografik protokollarning mobillik va moslashuvchanlik xossasi nimani anglatadi?
+protokolning turli konfiguratsiya va platformalarda yaxshi ishlash qobiliyatini anglatadi
+protokol, muhitning ozgina o'zgarishigamoslashuvchanligini anglatadi
+protokolning ishlashi jarayonida xotira va vaqt resurslaridan samarali foydalanishni anglatadi
+ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishini anglatadi
+138.Maxfiylik va yaxlitlik kriptografik protokollarning qaysi xossasiga tegishli?
+xavfsizlik
+turg'unlik
+samaradorlik
+adaptatsiya
+139.Ma'lum hatti-harakatlardan ishtirokchining hatti-harakatlarini rad etilishi holati qaysi xossaga tegishli?
+turg'unlik
+samaradorlik
+adaptatsiya
+xavfsizlik
+140.Protokol, muhitning ozgina o'zgarishiga moslashuvchanligi holati qaysi xossaga tegishli?
+adaptatsiya
+xavfsizlik
+turg'unlik
+samaradorlik
+141.Protokolning turli konfiguratsiya va platformalarda yaxshi ishlash qobiliyati qaysi xossaga tegishli?
+mobillik va moslashuvchanlik
+turg'unlik
+samaradorlik
+adaptatsiya
+142.Quyidagi protokollarning qaysilari simmetrik kriptotizimlarga asoslangan holda ishlaydi?
+Shamir, Nidhem-Shreder, Yahalom protokollari
+Shamir, Nidhem-Shreder, Diffie-Hellman protokoli
+Shamir, Diffie-Hellman, Yahalom protokollari
+Diffie-Hellman, Nidhem-Shreder, Yahalom protokollari
+143.Ochiq kalitli kriptotizimlarda kalitlarni boshqarishda qanday talablar qo'yiladi?
+shaxsiy kalit maxfiyligini saqlash, ochiq kalit kafolati
+shaxsiy kalit maxfiyligini saqlash, maxfiy kalitni uzatish kafolati
+maxfiy kalitni uzatish, ochiq kalit kafolati
+ochiq kalit kafolati, kalitlarni generatsiyalash
+144.Shaxsiy kalit maxfiyligini saqlash va ochiq kalit kafolati kabi talablar kalitlarni tarqatishning qanday kriptotizimi uchun qo'yiladi? 
+ochiq kalitli kriptotizimlarda
+simmetrik kriptotizimlarda
+maxfiy kalitli kriptotizimlarda
+gibrid kriptotizimlarda
+145.Kalitlardan xavfsiz foydalanish uchun barcha kerakli parametrlarni o'z ichiga olgan tizim qaysi?
+sertifikatlar infratuzilmasi
+maxfiy kalitli kriptotizimlar
+simmetrik kriptotizimlar
+gibrid kriptotizimlar
+146.Raqamli sertifikatda odatda qanday ma'lumotlardan iborat bo'ladi?
+foydalanuvchi nomi, uning ochiq kaliti va tegishli tashkilot tomonidan tasdiqlangan imzodan iborat bo'ladi
+foydalanuvchi nomi va uning ochiq kaliti
+foydalanuvchi nomi va tegishli tashkilot tomonidan tasdiqlangan imzodan iborat bo'ladi
+foydalanuvchi ochiq kaliti va tegishli tashkilot tomonidan tasdiqlangan imzodan iborat bo'ladi
+147.Foydalanuvchi nomi, uning ochiq kaliti va tegishli tashkilot tomonidan tasdiqlangan imzodan iborat bo'lgan hujjat nomini ko'rsating?
+raqamli sertifikat
+ochiq kalit
+maxfiy kalit
+ERI sertifikati
+148.Parolga asoslangan autentifikatsiyalash protokoli keltiringan qatorni belgilang?
+PAP
+PPP
+CHAP
+EAP
+149.CHAP protokoli necha xabardan iborat bo'ladi?
+3 ta
+2 ta
+1 ta
+4 ta
+150.Qaysi protokol VPN ni yaratish orqali xavfsizlikni ta'minlaydi?
+PPTP
+PPP
+PAP
+EAP
+151.Qaysi protokol mijoz va server o'rtasidaTCP/IP tarmoqlari orqali fayllarni uzatishni ta'minlab beradi?
+FTP
+SNTP
+CHAP
+PAP
+152.FileZilla dasturi qaysi protokol orqali ishlaydi?
+FTP
+SNTP
+CHAP
+PAP
+153.FTP protokolida ma'lumotlar kanali uchun ajratilgan port necha rejimda ishlaydi?
+2 ta
+3 ta
+4 ta
+yagona rejimda
+154.FTP protokoli server so'rovlarini nechinchi portdan oladi.
+21 portdan
+1023
+1024
+20
+155.Qaysi protokolda paketlarni tutib olish va tahlil qilish imkoniyati mavjud?
+FTP
+SNTP
+CHAP
+PAP
+156.Qaysi protokolda port buyrug'ini o'zgartirishga asoslangan hujum qilish imkoniyati mavjud?
+FTP
+SNTP
+CHAP
+PAP
+157.Qaysi protokolda "spoof attacks - kirishni cheklash" zaifligi mavjud?
+FTP
+SNTP
+CHAP
+PAP
+158.Ushbu sxema asosida qaysi turdagi protokollar ishlaydi? 1-rasm.
+vositachi yordamida protokollar
+arbitrli protokollar
+o‘ziga yetarli protokollar
+maxsus protokollar
+159.Ushbu sxema asosida qaysi turdagi protokollar ishlaydi? 2-rasm.
+arbitrli protokollar 
+vositachi yordamida protokollar
+o‘ziga yetarli protokollar
+maxsus protokollar
+160.Ushbu sxema asosida qaysi turdagi protokollar ishlaydi? 3-rasm.
+o‘ziga yetarli protokollar 
+vositachi yordamida protokollar
+arbitrli protokollar
+maxsus protokollar
+161.Simetrik kalitlar yordamida bardoshli ikki tomonlama autentifikasiya sxemasini ko‘rsating?
+4-rasm.
+5-rasm.
+6-rasm.
+7-rasm.
+162.Odatda raqamli sertifikatda qanday ma’lumotlar bo‘ladi?
+Foydalanuvchi nomi va uning ochiq kaliti sertifikatlash tashkiloti tomonidan imzolangan bo‘ladi
+Foydalanuvchi haqida ma’lumotlar bo‘ladi
+Foydalanuvchining shaxsiy kaliti bo‘ladi
+Foydalanuvchini autentifikatsiyadan o‘tkazish tizimidan iborat bo‘ladi
+163.Qaysi javobda PKI arxitekturasining turlari to‘g‘ri keltirilgan?
+Yagona CA(certificae authority)ga asoslangan, Tashkilot PKI ga asoslangan, Gibrid PKI arxitekturaga asoslangan 
+Yagona CA(certificae authority)ga asoslangan,
+Tashkilot PKI ga asoslangan, Gibrid PKI arxitekturaga asoslangan
+Tashkilot PKI ga asoslangan,
+164.X.509 sertifikatidan foydalanilga protokollar ro‘yxatini ko‘rsating
+SSL/TLS, S/MIME, IPSec
+Telnet,r-login, ARP
+TCP/IP, UDP
+SSH, FTP, FTPS
+165.Radius protokolining vazifasi to‘g‘ri ko‘rsatilgan javobni toping
+AAA(Authentication, Authorization, and Accounting)ni ta’minlaydi
+Foydalanuvchilarni o‘zaro outentifikatsiyalashni amalga oshiradi
+Inentification, Authentication, Authorization jarayonlarini amalga oshiradi
+Tarmoqdagi foydalanuvchilarni ro‘yxatga olish vazifasini bajaradi
+166.IpSec protokolining tashkil etuvchilarini ko‘rsating?
+AH,ESP,ISAKMP
+AH
+ESP
+SSAKMP
+167.WEP protokolida ma'lumotning butunliligini ta'minlash uchun qaysi funksiyadan foydalaniladi?
+CRC-32
+MD5
+SHA
+SHA-2
+168.Web protokolida qaysi shifrlash algoritmlaridan foydalaniladi?
+RC4
+AES
+DES
+Twofish
+169.WPA protokoli tarkibidagi qaysi protokol autentifikatsiyalashni amalga oshirishga javob beradi?
+EAP
+TKIP
+CRC
+DES
+170.Xavfsiz elektron tranzaksiylarda asosiy boshqichlarni sanang?
+Buyurtma so'rovi, To'lov avtorizatsiyasi, To'lovni olish
+Aloqa so'rovi, To'lovni amalaga oshirish, Natijani e'lon qilish
+Autentifikatsilash so'rovi, To'lovni amalaga oshirish, Natijani e'lon qilish
+Buyurtma so'rovi, Autentifikatsilash so'rovi, Natijani e'lon qilish
+171.SET protokolidagi asosiy muolajalarini ko'rsating?
+Ro'yxatdan o'tkazish muolajasi, Tranzaksiya muoljasi
+Autentifikatsiyalash muoljasi, Yakunlash muolajasi
+Aloqa o'rnatish muolajasi, Yakunlash muolajasi
+Aloqa o'rnatish muolajasi, Autentifikatsiya muolajasi
+172.SET protokolida to'lov avtorizatsiyasi uchun asosiy qadamlarni belgilang?
+Mercbant Authorization Request, Payment Getway processing, Mercbant Response processing
+Authorization Request, Responce processing
+Authorization Request, Request processing
+Mercbant Authorization Request, Payment Getway processing, Tranzaction processing
+173.SET prototokolida qaysi shifrlash algoritmidan foydalaniladi?
+RSA
+DES
+A5/1
+RC4
+174.SET protokolida to'lovni olish qadamlarini sanang.
+Mercbant Payment Capture Request, Payment Getway Capture Processing, Merxband Processing of Response.
+Mercbant Authorization Request, Payment Getway processing, Mercbant Response processing
+Authorization Request, Responce processing
+Authorization Request, Request processing
+175.Kerberos protokoli ko'proq qanday hududiy tarmoqlarda foydalanish uchun mo'ljallangan?
+LAN tarmoqlarida
+Butun internetda
+MAN tarmoqlarida
+PAN tarmoqlarida
+176.Kerberos protokolida qanday shifrlash algoritmlarida foydalanish mumkin?
+Ixtiyoriy simmetrik shifrlash algoritmlaridan
+Ixtiyoriy o'rin almashtirish shifrlash algoritmlaridan
+Ixtiyoriy o'rniga qo'yish shifrlash algoritmlaridan
+Ixtiyoriy ochiq kalitli shifrlash algoritmlaridan
+177.PGP protokolida qaysi heshlash algoritmidan foydalaniladi?
+SHA1
+MD5
+RSA
+CRC
+178.PGP protokolida qaysi shifrlash algoritmidan foydalaniladi?
+RSA
+MD5
+SHA1
+CRC
+179.PGP protokolida qaysi siqish algoritmidan foydalaniladi?
+ZIP
+RAR
+CRC
+SHA1
+180.S/MIME protokolida qanday shifrlash algoritmlaridan foydalaniladi?
+DES, Triple-DES, RC2
+AES, A5/1
+RC4, RSA,DES
+AES, RSA, DES
+181.S/MIME protokolida imzoni shakllantirish uchun qaysi formatdagi sertifikatdan foydalaniladi?
+PKCS#7
+TKIP
+Diffie-Hellman
+Nidham Shreder
+182.Arbitrli protokollarda, arbitirga qachon murojat qilinadi?
+protokolning to'gri bajarilishini nazorat qilish uchun murojat qilinadi
+arbitr ishtirok etmaydi
+arbitr doimiy ishtirok etishi kerak
+protokolning to'gri bajarilishiga ma'sul bo'lgan vositachining ishini nazorat qilish uchun murojat qilinadi
+183.Arbitrli protokolning vositachidan nima farqi bor?
+arbitr har bir protokolning bajarilishida ishtirok etishi shart emas
+arbitr har bir protokolning bajarilishida ishtirok etishi etishi shart
+arbitr vositachining protokoldagi harakatini nazorat qilishi kerak
+arbirit protokolning bajarilishida umuman ishtirok etmaydi
+184.Passiv buzg'unchilar qanday harakatlarni amalga oshirishadi?
+ishtirokchilar yuborgan habarni ushlab olishi, o'girlashi va tahlil qilishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi va tahlil qilishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi, o'zgartirishi va o'chirishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi va o'chirishi mumkin
+185.Aktiv buzg'unchilar qanday harakatlarni amalga oshirishadi?
+ishtirokchilar yuborgan habarni ushlab olishi, o'zgartirishi va o'chirishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi va o'chirishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi, o'girlashi va tahlil qilishi mumkin
+ishtirokchilar yuborgan habarni ushlab olishi va tahlil qilishi mumkin
+186.Aktiv buzg'unchilar qanday harakatlarni amalga oshirishadi?
+yangi habar hosil qilib boshqa ishtirokchiga yuborishi, o'zini boshqa ishtirokchi qilib ko'rsatishi mumkin
+yangi habar hosil qilib boshqa ishtirokchiga yuborishi
+o'zini boshqa ishtirokchi qilib ko'rsatishi mumkin
+yuborilgan habarni o'chirishi mumkin
+187.IPSec protokoli qaysi qurilmalar orasida ma'lumot oqimini himoya qiladi?
+Barcha javob to'g'ri
+Host-to-host
+Network-to-network
+Network-to-host
+188.IPSec protokolida DES algoritmining qaysi rejimidan foydalaniladi?
+Cyper Block Chaining
+Electronic Code Book
+Out Feed Back
+Cyper Chaining
+189.IPSec xavfsizlik yuki inkapsulyatsiyasi rejimlarini ko'rsating?
+Transport rejimi, Tunellash rejimi.
+Autentifikatsiyalash rejimi, Tunellash rejimi.
+Tunellash rejimi, Xavfsizlik rejimi.
+Sessiyalash rejimi, Tunellash rejimi.
+190.Denning-Sacco protokolida qaysi turdagi kriptografik tizimdan foydalanadi?
+assimmetrik
+simmetrik
+simmetrik va asimmetrik
+maxfiy kalitli kriptotizm
+191.Woo-Lam protokoli qaysi kriptografik tizimda foydalanadi?
+assimmetrik
+simmetrik
+simmetrik va asimmetrik
+maxfiy kalitli kriptotizm
+192.Sertifikatlash markazining vazifalari keltirilgan qatorni belgilang?
+Kalitlar juftini generatsiyalash, raqamli sertifikatni yaratish, setifikatlarni chop etish
+Ochiq kalitlar generatsiyalash, raqamli sertifikatni yaratish, setifikatlarni chop etish
+Yopiq kalitlar generatsiyalash, raqamli sertifikatni yaratish, setifikatlarni chop etish
+Yopiq kalitlar generatsiyalash, raqamli sertifikatni o'chirish, setifikatlarni chop etish
+193.Ochiq kalitli kriptotizimlarda "birinchi-toifada" qanday sertifikatlarni qanday jarayon orqali olish mumkin?
+Pochta manzilini taqdim etsih orqali.
+Shaxsiy ma'lumotlarni taqdim etsih orqali.
+Ochiq ma'lumotlarni taqdim etish orqali.
+Yashash manzilini taqdim etish orqali.
+194.Odatda SMTP protokoli TCP ning qaysi portidan foydalangan holda ma'lumotlarni almashadi?
+25
+23
+80
+8080
+195.WEP protokolida kalitlar qanday nomlar bilan ataladi?
+WEP-40, WEP-104
+WEP-1, WEP-2
+WPA 
+WEP
+196.IpSec protokolining imkoniyatlarini ko‘rsating?
+Ma'lumot autentifikatsiyasi, Ma'lumot butunligi, Ma'lumot maxfiyligi, Qayta yuborish hujumidan himoya.
+Shaxsni autentifikatsiyasi, Sessiyaning butunligi, Qayta yuborish hujumidan himoya.
+Sessiyaning butunligi, Qayta yuborish hujumidan himoya.
+Ma'lumot autentifikatsiyasi, Ma'lumot maxfiyligi, O'rtada turish hujumidan himoya.
+197.Protokolning ishlashi jarayonida xotira va vaqt resurslaridan samarali foydalanish holati qaysi xossaga tegishli?
+samaradorlik
+xavfsizlik
+turg'unlik
+mobillik va moslashuvchanlik
+198.Qaysi protokolda fayl uzatish paytida xatolik yuzaga kelsa foydalanuvchiga xabar beriladi?
+FTP
+SNTP
+CHAP
+PAP
+199.Dass protokolida qaysi turdagi shifrlash algoritmlaridan foydalanilgan
+Simmetrik va asimmetrik
+Faqat simmetrik
+Faqat asimmetrik
+Elektron raqamli imzo
+200.Denning-Sacco protokolida qaysi turdagi shifrlash algoritmidan foydalanilgan
+Asimmetrik shifrlash algoritimdan
+Simmetrik shifrlash algoritimdan
+Elektron raqamli imzo algoritimdan
+Shifrlash algoritmidan foydalanilmagan
+201.WPA protokoli tarkibidagi qaysi protokol kalit almashinishni amalga oshirishga javob beradi?
+TKIP
+EAP 
+CRC
+DES
+202.WPA2 prtokolida ma'lumotning maxfiyligini ta'minlash maqsadida qaysi shifrlash algoritmidan foydalaniladi?
+AES
+RC4
+A5/1
+Sezar
+203.Qaysi protokol qo'pol kuch hujumiga bardoshsiz?
+FTP
+SNTP
+CHAP
+PAP
+
+	</body>
 </html>
